@@ -90,7 +90,7 @@ Fitbit provides a Web API for accessing data from Fitbit activity trackers, Aria
 * [addSubscription](#addSubscription)
 * [getSubscriptions](#getSubscriptions)
 * [removeSubscription](#removeSubscription)
-* [acceptLanguage options](#acceptLanguage)
+* [acceptLanguage options](#acceptLanguageOptions)
 * [acceptLocale options](#acceptLocale)
  
 <a name="getAccessToken"/>
@@ -1207,7 +1207,7 @@ Deletes a subscription for a user.
 | collectionPath     | String| Optional: Collection to delete subscription form (foods, activities, sleep, or body.). If not present, subscriptions will be deleted from all collections.
 | xFitbitSubscriberId| String| Optional: The ID of the subscriber to receive notifications, as defined on dev.fitbit.com. If not present, the default subscriber is used. Recommended to fill.
 
-<a name="acceptLanguage"/>
+<a name="acceptLanguageOptions"/>
 ## acceptLanguage
 API calls reveal and log resource values in one of the unit systems based on the value of the Accept-Language header. If an endpoint respects the Accept-Language header, it is explicitly mentioned in the endpoint details.
 
