@@ -1219,6 +1219,7 @@ API calls reveal and log resource values in one of the unit systems based on the
 
 ###Unit Systems
 US
+
 | Unit Type             | Unit 
 |-----------------------|-------
 | duration              | milliseconds
@@ -1231,6 +1232,7 @@ US
 | blood glucose         | milligrams per deciliter (mg/dL) (mass concentration)
 
 UK
+
 | Unit Type             | Unit 
 |-----------------------|-------
 | duration              | milliseconds
@@ -1244,6 +1246,7 @@ UK
 Note that the API uses decimal values for all unit types, so UK weight will be expressed as 10.5 stone instead of 10 stone 7 pounds.
 
 Metric
+
 | Unit Type             | Unit 
 |-----------------------|-------
 | duration              | milliseconds
@@ -1258,6 +1261,7 @@ Metric
 <a name="acceptLocale"/>
 ## acceptLocale
 Some of the API responses include text fields that may be suitable for displaying to the end user. Setting the Accept-Locale header will return a translated response if available. We currently support the following locales:
+
 | Accept-Language | Unit System 
 |-----------------|-------
 | en_AU           | Australia
