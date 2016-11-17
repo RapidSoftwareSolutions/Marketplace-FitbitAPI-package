@@ -1,0 +1,2836 @@
+{
+  "package": "FitbitAPI",
+  "tagline": "Fitbit API Wrapper",
+  "description": "Fitbit provides a Web API for accessing data from Fitbit activity trackers, Aria scale, and manually entered logs.",
+  "image": "http://logo.clearbit.com/fitbit.com",
+  "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-FitbitAPI-package",
+  "accounts": {
+    "domain": "fitbit.com",
+    "credentials": [
+      "clientId",
+      "clientSecret"
+    ]
+  },
+  "blocks": [
+    {
+      "name": "getAccessToken",
+      "description": "This endpoint allows to get a token on behalf of a user.",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: The id of your application obtained from Fitbit."
+        },
+        {
+          "name": "clientSecret",
+          "type": "credentials",
+          "info": "Required: The secret of your application obtained from Fitbit."
+        },
+        {
+          "name": "redirectUri",
+          "type": "String",
+          "info": "Optional: Required if specified in the redirect to the authorization page. Must be exact match."
+        },
+        {
+          "name": "code",
+          "type": "String",
+          "info": "Required: The access grant code you received via the callback from ProductHunt."
+        },
+        {
+          "name": "state",
+          "type": "String",
+          "info": "Optional: Required if specified in the redirect to the authorization page. Must be an exact match."
+        },
+        {
+          "name": "expiresIn",
+          "type": "String",
+          "info": "Optional: Specify the desired access token lifetime. Defaults to 28800. 3600 for 1 hour, 28800 for 8 hours."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "refreshingTokens",
+      "description": "This endpoint allows to get a token from refresh token.",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: The id of your application obtained from Fitbit."
+        },
+        {
+          "name": "clientSecret",
+          "type": "credentials",
+          "info": "Required: The secret of your application obtained from Fitbit."
+        },
+        {
+          "name": "refreshToken",
+          "type": "String",
+          "info": "Required: The refresh token obtained from getAccessToken method."
+        },
+        {
+          "name": "expiresIn",
+          "type": "String",
+          "info": "Optional: Specify the desired access token lifetime. Defaults to 28800. 3600 for 1 hour, 28800 for 8 hours."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "revokingAccessTokens",
+      "description": "This endpoint allows to revoke an access token.",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "Required: The id of your application obtained from Fitbit."
+        },
+        {
+          "name": "clientSecret",
+          "type": "credentials",
+          "info": "Required: The secret of your application obtained from Fitbit."
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getProfile",
+      "description": "This endpoint returns a user's profile. The authenticated owner receives all values.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        },
+        {
+          "name": "userId",
+          "type": "String",
+          "info": "Required: The encoded ID of the user. Use \"-\" (dash) for current logged-in user."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "updateProfile",
+      "description": "This endpoint updates a user's profile.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "info": "Required: The encoded ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "gender",
+          "type": "String",
+          "test": "MALE",
+          "info": "Optional: More accurately, sex; (MALE/FEMALE/NA)."
+        }, {
+          "name": "birthday",
+          "type": "String",
+          "info": "Optional: Date of birth; in the format yyyy-MM-dd."
+        }, {
+          "name": "height",
+          "type": "String",
+          "info": "Optional: Height; in the format X.XX, in the unit system that corresponds to the Accept-Language header provided."
+        }, {
+          "name": "aboutMe",
+          "type": "String",
+          "test": "Some text about me...",
+          "info": "Optional: About Me string."
+        }, {
+          "name": "fullname",
+          "type": "String",
+          "info": "Optional: Full name."
+        }, {
+          "name": "country",
+          "type": "String",
+          "info": "Optional: Country; two-character code."
+        }, {
+          "name": "state",
+          "type": "String",
+          "info": "Optional: US State; two-character code; valid only if country was or being set to US."
+        }, {
+          "name": "city",
+          "type": "String",
+          "info": "Optional: City."
+        }, {
+          "name": "strideLengthWalking",
+          "type": "String",
+          "info": "Optional: Walking stride length; in the format X.XX, in the unit system that corresponds to the Accept-Language header provided."
+        }, {
+          "name": "strideLengthRunning",
+          "type": "String",
+          "info": "Optional: Running stride length; in the format X.XX, in the unit system that corresponds to the Accept-Language header provided."
+        }, {
+          "name": "weightUnit",
+          "type": "String",
+          "info": "Optional: Default weight unit on website (doesn't affect API); one of (en_US, en_GB, \"any\" for METRIC)."
+        }, {
+          "name": "heightUnit",
+          "type": "String",
+          "info": "Optional: Default height/distance unit on website (doesn't affect API); one of (en_US, \"any\" for METRIC)."
+        }, {
+          "name": "waterUnit",
+          "type": "String",
+          "info": "Optional: Default water unit on website (doesn't affect API); one of (en_US, \"any\" for METRIC)."
+        }, {
+          "name": "glucoseUnit",
+          "type": "String",
+          "info": "Optional: Default glucose unit on website (doesn't affect API); one of (en_US, \"any\" for METRIC)."
+        }, {
+          "name": "timezone",
+          "type": "String",
+          "info": "Optional: Timezone; in the format \"America/Los_Angeles\"."
+        }, {
+          "name": "foodsLocale",
+          "type": "String",
+          "info": "Optional: Food Database Locale; in the format \"xx_XX\"."
+        }, {
+          "name": "locale",
+          "type": "String",
+          "info": "Optional: Locale of website (country/language); one of the locales, currently – (en_US, fr_FR, de_DE, es_ES, en_GB, en_AU, en_NZ, ja_JP)."
+        }, {
+          "name": "localeLang",
+          "type": "String",
+          "info": "Optional: Language; in the format \"xx\". You should specify either locale or both - localeLang and localeCountry (locale is higher priority)."
+        }, {
+          "name": "localeCountry",
+          "type": "String",
+          "info": "Optional: Country; in the format \"XX\". You should specify either locale or both - localeLang and localeCountry (locale is higher priority)."
+        }, {
+          "name": "startDayOfWeek",
+          "type": "String",
+          "test": "Monday",
+          "info": "Optional: Start day of the week; what day the week should start on. Either Sunday or Monday."
+        }, {
+          "name": "clockTimeDisplayFormat",
+          "type": "String",
+          "info": "Optional: How trackers with a clock should display the time. Either 12hour or 24hour."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "test": "METRIC",
+          "info": "Optional: The measurement unit system to use for response values."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getBadges",
+      "description": "This endpoint retrieves the user's badges in the format requested. Response includes all badges for the user as seen on the Fitbit website badge locker (both activity and weight related.)",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "info": "Required: The encoded ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "test": "METRIC",
+          "info": "Optional: The measurement unit system to use for response values."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getSleepGoal",
+      "description": "This endpoint returns a user's current sleep goal using unit in the unit system that corresponds to the Accept-Language header provided in the format requested.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "test": "METRIC",
+          "info": "Optional: The measurement unit system to use for response values."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "updateSleepGoal",
+      "description": "This endpoint creates or updates a user's sleep goal and get a response in the in the format requested.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "minDuration",
+          "type": "String",
+          "test": "600",
+          "info": "Required: The target sleep duration is in minutes."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "logSleep",
+      "description": "This endpoint creates a log entry for a sleep event and returns a response in the format requested. Keep in mind that it is NOT possible to create overlapping log entries or entries for time periods that DO NOT originate from a tracker. Sleep log entries appear on website's sleep tracker interface according to the date on which the sleep event ends.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "info": "Required: The encoded ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "startTime",
+          "type": "String",
+          "test": "23:00",
+          "info": "Required: Start time; hours and minutes in the format HH:mm."
+        }, {
+          "name": "duration",
+          "type": "String",
+          "test": "25200000",
+          "info": "Required: Duration in milliseconds."
+        }, {
+          "name": "date",
+          "test": "2016-11-14",
+          "type": "String",
+          "info": "Required: Log entry date in the format yyyy-MM-dd."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "deleteSleepLog",
+      "description": "This endpoint deletes a user's sleep log entry with the given ID.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "info": "Required: The encoded ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "logId",
+          "type": "String",
+          "info": "Required: ID of the sleep log to be deleted."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getSleepLogs",
+      "description": "This endpoint returns a summary and list of a user's sleep log entries as well as minute by minute sleep entry data for a given day in the format requested. The endpoint response includes summary for all sleep log entries for the given day (including naps.). The relationship between sleep log entry properties is expressed with the following equation: timeInBed = minutesToFallAsleep + minutesAsleep + minutesAwake + minutesAfterWakeup",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The encoded ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "date",
+          "type": "String",
+          "test": "2016-11-14",
+          "info": "Required: The date of records to be returned. In the format yyyy-MM-dd."
+        }, {
+          "name": "isMainSleep",
+          "type": "String",
+          "info": "Optional: If you need to fetch data only for the user's main sleep event, you can send the request with isMainSleep=true"
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getSleepTimeSeries",
+      "description": "This endpoint returns time series data in the specified range for a given resource in the format requested using units in the unit system that corresponds to the Accept-Language header provided.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "info": "Required: The encoded ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "resourcePath",
+          "type": "String",
+          "test": "sleep/startTime",
+          "info": "Required: The resource path; see the Resource Path Options in README for a list of options."
+        }, {
+          "name": "startDate",
+          "type": "String",
+          "test": "2016-11-10",
+          "info": "Required: The range start date, in the format yyyy-MM-dd or today."
+        }, {
+          "name": "endDate",
+          "type": "String",
+          "test": "7d",
+          "info": "Required: The end date of the range, in the format yyyy-MM-dd or today. Also supported values: 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y, or max. Remember that with short code endpoint will return data earlier startDate. See README for more details and examples."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: The language to use for response values. Language is used to determine the food measurement units returned."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getHeartRateTimeSeries",
+      "description": "This endpoint returns time series data in the specified range for a given resource in the format requested using units in the unit systems that corresponds to the Accept-Language header provided.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "info": "Required: The encoded ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "startDate",
+          "type": "String",
+          "test": "2016-11-10",
+          "info": "Required: The range start date, in the format yyyy-MM-dd or today."
+        }, {
+          "name": "endDate",
+          "type": "String",
+          "test": "7d",
+          "info": "Required: The end date of the range, in the format yyyy-MM-dd or today. Also supported values: 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y, or max. Remember that with short code endpoint will return data earlier startDate. See README for more details and examples."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: The language to use for response values. Language is used to determine the food measurement units returned."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getHeartRateIntradayTimeSeries",
+      "description": "This endpoint returns the intraday time series for a given resource in the format requested. If your application has the appropriate access, your calls to a time series endpoint for a specific day (by using start and end dates on the same day or a period of 1d), the response will include extended intraday values with a one-minute detail level for that day.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "startDate",
+          "type": "String",
+          "test": "2016-11-14",
+          "info": "Required: The range start date, in the format yyyy-MM-dd or today."
+        }, {
+          "name": "endDate",
+          "type": "String",
+          "test": "1d",
+          "info": "Required: The end date of the range, in the format yyyy-MM-dd or today. Also supported values: 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y, or max. Remember that with short code endpoint will return data earlier startDate. See README for more details and examples."
+        }, {
+          "name": "detailLevel",
+          "type": "String",
+          "test": "1min",
+          "info": "Required: Number of data points to include. Either 1sec or 1min."
+        }, {
+          "name": "startTime",
+          "type": "String",
+          "test": "00:00",
+          "info": "Optional: The start of the period, in the format HH:mm."
+        }, {
+          "name": "endTime",
+          "type": "String",
+          "info": "Optional: The end of the period, in the format HH:mm."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getFriendsLeaderboard",
+      "description": "This endpoint gets the user's friends leaderboard in the format requested using units in the unit system which corresponds to the Accept-Language header provided.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The encoded ID of the user. Use \"-\" (dash) for current logged-in user."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getFriends",
+      "description": "This endpoint returns data of a user's friends in the format requested using units in the unit system which corresponds to the Accept-Language header provided.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "28H22H",
+          "info": "Required: The encoded ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: The language to use for response values. Language is used to determine the food measurement units returned."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getFriendInvitations",
+      "description": "This endpoint returns data of a user's friends in the format requested using units in the unit system which corresponds to the Accept-Language header provided.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The encoded ID of the user. Use \"-\" (dash) for current logged-in user."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "inviteFriend",
+      "description": "This endpoint creates an invitation to become friends with the authorized user. Warning: Be careful when using the Invite Friend endpoint and, as always, adhere to the Terms of Service. Though Fitbit has organic limits on allowed number of invitations, your application's workflow must not allow users to send bulk invitations to users. Doing so could be considered SPAM.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "invitedUserEmail",
+          "type": "String",
+          "info": "Optional: Email of the user to invite. Does not need to be a Fitbit member. Either invitedUserEmail or invitedUserId is required."
+        }, {
+          "name": "invitedUserId",
+          "type": "String",
+          "info": "Optional: Encoded ID of the invited user. Either invitedUserEmail or invitedUserId is required."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "respondToFriendInvitation",
+      "description": "This endpoint accepts or rejects an invitation to become friends with inviting user.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "fromUserId",
+          "type": "String",
+          "info": "Required: Encoded ID of user from which to accept or reject invitation."
+        }, {
+          "name": "accept",
+          "type": "String",
+          "info": "Required: Accept or reject invitation. 'true' or 'false'."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getFoodLocales",
+      "description": "This endpoint returns the food locales that the user may choose to search, log, and create food in.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getFoodGoals",
+      "description": "This endpoint returns a user's current daily calorie consumption goal and/or food Plan in the format requested.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getWaterLogs",
+      "description": "This endpoint retrieves a summary and list of a user's water log entries for a given day in the format requested using units in the unit system that corresponds to the Accept-Language header provided.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "date",
+          "type": "String",
+          "test": "2016-11-14",
+          "info": "Required: The date of records to be returned. In the format yyyy-MM-dd."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: The language to use for response values. Language is used to determine the food measurement units returned."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getWaterGoal",
+      "description": "This endpoint returns a user's current water goal.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getFoodOrWaterTimeSeries",
+      "description": "This endpoint returns time series data in the specified range for a given resource in the format requested using units in the unit systems that corresponds to the Accept-Language header provided.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "resourcePath",
+          "type": "String",
+          "test": "foods/log/caloriesIn",
+          "info": "Required: The resource path. Possible options are: foods/log/caloriesIn, foods/log/water."
+        }, {
+          "name": "startDate",
+          "type": "String",
+          "test": "2016-11-14",
+          "info": "Required: The range start date, in the formatyyyy-MM-dd or today"
+        }, {
+          "name": "endDate",
+          "type": "String",
+          "test": "1d",
+          "info": "Required: The end date of the range, in the format yyyy-MM-dd or today. Also supported values: 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y. Remember that with short code endpoint will return data earlier startDate. See README for more details and examples."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: The language to use for response values. Language is used to determine the food measurement units returned."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "createFoodLog",
+      "description": "This endpoint endpoint creates a log entry for a food event and returns a response in the format requested.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "foodId",
+          "type": "String",
+          "test": "82294",
+          "info": "Optional: ID of the food to be logged. Either foodId or foodName must be provided."
+        }, {
+          "name": "foodName",
+          "type": "String",
+          "info": "Optional: Food entry name. Either foodId or foodName must be provided."
+        }, {
+          "name": "mealTypeId",
+          "type": "String",
+          "test": "3",
+          "info": "Required: Meal type. 1=Breakfast; 2=Morning Snack; 3=Lunch; 4=Afternoon Snack; 5=Dinner; 7=Anytime."
+        }, {
+          "name": "unitId",
+          "type": "String",
+          "test": "304",
+          "info": "Required: ID of units used. Typically retrieved via a previous call to Get Food Logs, Search Foods, or Get Food Units."
+        }, {
+          "name": "amount",
+          "type": "String",
+          "test": "1",
+          "info": "Required: Amount consumed; in the format X.XX, in the specified unitId."
+        }, {
+          "name": "date",
+          "type": "String",
+          "test": "2016-11-14",
+          "info": "Required: Log entry date; in the format yyyy-MM-dd."
+        }, {
+          "name": "favorite",
+          "type": "String",
+          "test": "false",
+          "info": "Optional: true will add the food to the user's favorites after creating the log entry; false will not. Valid only with foodId."
+        }, {
+          "name": "brandName",
+          "type": "String",
+          "info": "Optional: Brand name of food. Valid only with foodName parameter."
+        }, {
+          "name": "calories",
+          "type": "String",
+          "info": "Optional: Calories for this serving size. Allowed with foodName parameter (defaults to zero); otherwise ignored."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: The language to use for response values. Language is used to determine the food measurement units returned."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "updateFoodLog",
+      "description": "This endpoint changes the quantity or calories consumed for a user's food log entry with the given ID.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "foodLogId",
+          "type": "String",
+          "info": "Required: The ID of the food log to edit."
+        }, {
+          "name": "mealTypeId",
+          "type": "String",
+          "test": "4",
+          "info": "Required: Meal type. 1=Breakfast; 2=Morning Snack; 3=Lunch; 4=Afternoon Snack; 5=Dinner; 7=Anytime."
+        }, {
+          "name": "unitId",
+          "type": "String",
+          "test": "304",
+          "info": "Optional: ID of units used. Not required if the food log was created with the foodName parameter. Typically retrieved via a previous call to Get Food Logs, Search Foods, or Get Food Units."
+        }, {
+          "name": "amount",
+          "type": "String",
+          "test": "2",
+          "info": "Optional: Amount consumed; Not required if the food log was created with the foodName parameter. In the format X.XX, in the specified unitId."
+        }, {
+          "name": "calories",
+          "type": "String",
+          "info": "Optional: Calories for this food log. Allowed if the food log was created with the foodName parameter (defaults to zero); otherwise ignored."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: The language to use for response values. Language is used to determine the food measurement units returned."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "logWater",
+      "description": "This endpoint creates a log entry for water using units in the unit systems that corresponds to the Accept-Language header provided.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "date",
+          "type": "String",
+          "test": "2016-11-14",
+          "info": "Required: Log entry date; in the format yyyy-MM-dd."
+        }, {
+          "name": "amount",
+          "type": "String",
+          "test": "1",
+          "info": "Required: Amount consumed; in the format X.X and in the specified waterUnit or in the unit system that corresponds to the Accept-Language header provided."
+        }, {
+          "name": "unit",
+          "type": "String",
+          "test": "cup",
+          "info": "Optional: Water measurement unit. \"ml\", \"fl oz\", or \"cup\"."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: The language to use for response values. Language is used to determine the food measurement units returned."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "updateFoodGoal",
+      "description": "This endpoint updates or creates a user's daily calorie consumption goal or food plan and returns a response in the format requested. Food plan exists only if user already as an active weight goal crated via the Update Weight Goal endpoint.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "calories",
+          "type": "String",
+          "test": "2500",
+          "info": "Optional: Manual calorie consumption goal in integer format. Either calories or intensity must be provided."
+        }, {
+          "name": "intensity",
+          "type": "String",
+          "info": "Optional: Food plan intensity (MAINTENANCE, EASIER, MEDIUM, KINDAHARD, or HARDER). Either calories or intensity must be provided."
+        }, {
+          "name": "personalized",
+          "type": "String",
+          "info": "Optional: Food plan type; true or false."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: The measurement unit system to use for parameters and response values."
+        }, {
+          "name": "acceptLocale",
+          "type": "String",
+          "info": "Optional: The locale to use for response values."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "updateWaterGoal",
+      "description": "This endpoint updates or creates a user's daily calorie consumption goal or food plan and returns a response in the format requested.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "target",
+          "type": "String",
+          "test": "25",
+          "info": "Required: Target water goal in the format X.X is set in unit based on locale."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "updateWaterLog",
+      "description": "This endpoint allows to update a water log.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "waterLogId",
+          "type": "String",
+          "info": "Required: The ID of water log."
+        }, {
+          "name": "amount",
+          "type": "String",
+          "test": "2",
+          "info": "Required: Amount consumed; in the format X.X and in the specified waterUnit or in the unit system that corresponds to the Accept-Language header provided."
+        }, {
+          "name": "unit",
+          "type": "String",
+          "test": "cup",
+          "info": "Optional: Water measurement unit. \"ml\", \"fl oz\", or \"cup\"."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: The measurement unit system to use for parameters and response values."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "deleteWaterLog",
+      "description": "This endpoint deletes a user's water log entry with the given ID.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "waterLogId",
+          "type": "String",
+          "info": "Required: The id of the water log entry to be deleted."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getFavoriteFoods",
+      "description": "This endpoint returns a list of a user's favorite foods in the format requested. A favorite food in the list provides a quick way to log the food via the Log Food endpoint.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: Used to determine the food measurement units returned."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getFrequentFoods",
+      "description": "This endpoint returns a list of a user's frequent foods in the format requested. A frequent food in the list provides a quick way to log the food via the Log Food endpoint.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: Used to determine the food measurement units returned."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getRecentFoods",
+      "description": "This endpoint returns a list of a user's recent foods in the format requested. A recent food provides a quick way to log the food via the Log Food endpoint.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: Used to determine the food measurement units returned."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "addFavoriteFood",
+      "description": "This endpoint adds a food with the given ID to the user's list of favorite foods.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "foodId",
+          "type": "String",
+          "test": "82294",
+          "info": "Required: The ID of the food to be removed."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "deleteFavoriteFood",
+      "description": "This endpoint deletes a food with the given ID to the user's list of favorite foods.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "foodId",
+          "type": "String",
+          "test": "82294",
+          "info": "Required: The ID of the food to be removed."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getMeals",
+      "description": "This endpoint returns a list of meals created by user in his or her food log in the format requested. Meals in the list provide a quick way to log several foods at a time via the calls to the Log Food endpoint.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: Used to determine the food measurement units returned."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "createMeal",
+      "description": "This endpoint creates a meal with the given food contained in the post body.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "name",
+          "type": "String",
+          "test": "test",
+          "info": "Required: Name of the meal."
+        }, {
+          "name": "description",
+          "type": "String",
+          "test": "test description",
+          "info": "Required: Short description of the meal."
+        }, {
+          "name": "mealFoods",
+          "type": "JSON",
+          "info": "Required: Array of json objects. Object must contain foodId, unitId, amount. Ex.: [{\"foodId\" : <value>,\"amount\" : <value>,\"unitId\" : <value>}]. See README for more details and examples."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: Used to determine the food measurement units returned."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getSingleMeal",
+      "description": "This endpoint retrieves a meal for a user given the meal id.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "mealId",
+          "type": "String",
+          "info": "Required: The ID of the meal."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: Used to determine the food measurement units returned."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "editMeal",
+      "description": "This endpoint replaces an existing meal with the contents of the request. The response contains the updated meal.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "mealId",
+          "type": "String",
+          "info": "Required: The ID of the meal to update."
+        }, {
+          "name": "name",
+          "type": "String",
+          "test": "test",
+          "info": "Required: Name of the meal."
+        }, {
+          "name": "description",
+          "type": "String",
+          "test": "test description",
+          "info": "Required: Short description of the meal."
+        }, {
+          "name": "mealFoods",
+          "type": "JSON",
+          "info": "Required: Array of json objects. Object must contain foodId, unitId, amount. Ex.: [{\"foodId\" : <value>,\"amount\" : <value>,\"unitId\" : <value>}]. See README for more details and examples."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: Used to determine the food measurement units returned."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "deleteMeal",
+      "description": "This endpoint allows to delete a user's meal with the given meal id.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "mealId",
+          "type": "String",
+          "info": "Required: The ID of the meal."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "createFood",
+      "description": "This endpoint creates a new private food for a user and returns a response in the format requested. The created food is found via the Search Foods call.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "name",
+          "type": "String",
+          "test": "test",
+          "info": "Required: Food name."
+        }, {
+          "name": "defaultFoodMeasurementUnitId",
+          "type": "String",
+          "test": "1",
+          "info": "Required: ID of the default measurement unit. Full list of units can be retrieved via the Get Food Units endpoint."
+        }, {
+          "name": "defaultServingSize",
+          "type": "String",
+          "test": "1",
+          "info": "Required: Size of the default serving. Nutritional values should be provided for this serving size."
+        }, {
+          "name": "calories",
+          "type": "String",
+          "test": "1000",
+          "info": "Required: Calories in the default serving size."
+        }, {
+          "name": "formType",
+          "type": "String",
+          "info": "Optional: Form type (LIQUID or DRY.)."
+        }, {
+          "name": "description",
+          "type": "String",
+          "info": "Optional: Description of the food."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: Used to determine the food measurement units returned."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "deleteCustomFood",
+      "description": "This endpoint deletes custom food for a user and returns a response in the format requested.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "foodId",
+          "type": "String",
+          "info": "Required: The ID of the food to be deleted."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getFood",
+      "description": "This endpoint returns the details of a specific food in the Fitbit food database or a private food the authorized user has entered in the format requested.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "foodId",
+          "type": "String",
+          "test": "82294",
+          "info": "Required: The ID of the food to be deleted."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: Used to determine the food measurement units returned."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getFoodUnits",
+      "description": "This endpoint returns a list of all valid Fitbit food units in the format requested.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: Used to determine the food measurement units returned."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "searchFoods",
+      "description": "This endpoint returns a list of public foods from Fitbit foods database and private foods the user created in the format requested.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "query",
+          "type": "String",
+          "info": "Required: The URL-encoded search query."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: Used to determine the food measurement units returned."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getFoodLogs",
+      "description": "This endpoint returns a summary and list of a user's food log entries for a given day in the format requested.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "date",
+          "type": "String",
+          "test": "2016-11-15",
+          "info": "Required: The date of records to be returned. In the format yyyy-MM-dd."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: Used to determine the food measurement units returned."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "deleteFoodLog",
+      "description": "This endpoint deletes a user's food log entry with the given ID.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "foodLogId",
+          "type": "String",
+          "info": "Required: The id of the food log entry to be deleted."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getDevices",
+      "description": "This endpoint returns a list of the Fitbit devices connected to a user's account.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getAlarms",
+      "description": "This endpoint returns a list of the set alarms connected to a user's account.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "trackerId",
+          "type": "String",
+          "info": "Required: The ID of the tracker for which data is returned. The tracker-id value is found via the Get Devices endpoint."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "addAlarm",
+      "description": "This endpoint adds the alarm settings to a given ID for a given device.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "trackerId",
+          "type": "String",
+          "info": "Required: The ID of the tracker for which data is returned. The tracker-id value is found via the Get Devices endpoint."
+        }, {
+          "name": "time",
+          "type": "String",
+          "info": "Required: Time of day that the alarm vibrates with a UTC timezone offset, e.g. 07:15-08:00."
+        }, {
+          "name": "enabled",
+          "type": "String",
+          "info": "Required: true or false. If false, alarm does not vibrate until enabled is set to true."
+        }, {
+          "name": "recurring",
+          "type": "String",
+          "info": "Required: true or false. If false, the alarm is a single event."
+        }, {
+          "name": "weekDays",
+          "type": "String",
+          "info": "Required: Comma separated list of days of the week on which the alarm vibrates, e.g. MONDAY,TUESDAY"
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "updateAlarm",
+      "description": "This endpoint updates the alarm entry with a given ID for a given device. It also gets a response in the format requested.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "trackerId",
+          "type": "String",
+          "info": "Required: The ID of the tracker for which data is returned. The tracker-id value is found via the Get Devices endpoint."
+        }, {
+          "name": "alarmId",
+          "type": "String",
+          "info": "Required: The ID of the alarm to be updated. The alarm-id value is found in the response of the Get Alarms endpoint."
+        }, {
+          "name": "time",
+          "type": "String",
+          "info": "Required: Time of day that the alarm vibrates with a UTC timezone offset, e.g. 07:15-08:00."
+        }, {
+          "name": "enabled",
+          "type": "String",
+          "info": "Required: true or false. If false, alarm does not vibrate until enabled is set to true."
+        }, {
+          "name": "recurring",
+          "type": "String",
+          "info": "Required: true or false. If false, the alarm is a single event."
+        }, {
+          "name": "weekDays",
+          "type": "String",
+          "info": "Required: Comma separated list of days of the week on which the alarm vibrates, e.g. MONDAY,TUESDAY"
+        }, {
+          "name": "snoozeLength",
+          "type": "String",
+          "info": "Required: Minutes between alarms; integer value."
+        }, {
+          "name": "snoozeCount",
+          "type": "String",
+          "info": "Required: Maximum snooze count; integer value."
+        }, {
+          "name": "label",
+          "type": "String",
+          "info": "Optional: Label for the alarm; string value."
+        }, {
+          "name": "vibe",
+          "type": "String",
+          "info": "Optional: Vibe pattern; only one value for now - DEFAULT."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "deleteAlarm",
+      "description": "This endpoint allow to delete the user's device alarm entry with the given ID for a given device.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "trackerId",
+          "type": "String",
+          "info": "Required: The ID of the tracker whose alarms is managed. The tracker-id value is found via the Get Devices endpoint."
+        }, {
+          "name": "alarmId",
+          "type": "String",
+          "info": "Required: The ID of the alarm that is updated. The alarm-id value is found via the Get Alarms endpoint"
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: The measurement unit system to use for response values."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getBodyFatLogs",
+      "description": "This endpoint retrieves a list of all user's body fat log entries for a given day in the format requested. Body fat log entries are available only to authorized user. If you need to fetch only the most recent entry, you can use the Get Body Measurements endpoint.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "startDate",
+          "type": "String",
+          "test": "2016-11-01",
+          "info": "Required: The date in the format yyyy-MM-dd or \"today\"."
+        }, {
+          "name": "endDate",
+          "type": "String",
+          "info": "Optional: The date in the format yyyy-MM-dd or 1d, 7d, 1w, 1m. Note: The range should not be longer than 31 days."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: The measurement unit system to use for response values."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "logBodyFat",
+      "description": "This endpoint creates a log entry for body fat and returns a response in the format requested. Note: The returned Body Fat Log IDs are unique to the user, but not globally unique.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "fat",
+          "type": "String",
+          "test": "14.5",
+          "info": "Required: Body fat; in the format X.XX, in the unit system that corresponds to the Accept-Language header provided."
+        }, {
+          "name": "date",
+          "type": "String",
+          "info": "Required: Log entry date; in the format yyyy-MM-dd."
+        }, {
+          "name": "time",
+          "type": "String",
+          "info": "Optional: Time of the measurement; hours and minutes in the format HH:mm:ss, set to the last second of the day if not provided."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: The measurement unit system to use for response values."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "deleteBodyFatLog",
+      "description": "This endpoint allow to delete a user's body fat log entry with the given ID.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "bodyFatLogId",
+          "type": "String",
+          "info": "Required: The ID of the body fat log entry."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getBodyTimeSeries",
+      "description": "This endpoint return time series data in the specified range for a given resource in the format requested using units in the unit systems that corresponds to the Accept-Language header provided.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "resourcePath",
+          "type": "String",
+          "test": "bmi",
+          "info": "Required: The resource path. Options are \"bmi\", \"fat\", or \"weight\"."
+        }, {
+          "name": "startDate",
+          "type": "String",
+          "test": "2016-11-14",
+          "info": "Required: The range start date, in the format yyyy-MM-dd or today."
+        }, {
+          "name": "endDate",
+          "type": "String",
+          "test": "1d",
+          "info": "Required: The range end date, in the format yyyy-MM-dd or one of options. Options are today, 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y, or max."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: The language to use for response values. Language is used to determine the activity measurement units returned."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getBodyGoals",
+      "description": "This endpoint allow to retrieve a user's current body fat percentage or weight goal using units in the unit systems that corresponds to the Accept-Language header provided in the format requested.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "goalType",
+          "type": "String",
+          "test": "weight",
+          "info": "Required: The type of goal for which data is returned. Possible values: weight or fat."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: The measurement unit system to use for response values."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "updateBodyFatGoal",
+      "description": "This endpoint create or update user's fat percentage goal.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "fat",
+          "type": "String",
+          "test": "10",
+          "info": "Required: Target body fat percentage; in the format X.XX."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "updateWeightGoal",
+      "description": "This endpoint create or update user's fat or weight goal using units in the unit systems that corresponds to the Accept-Language header provided in the format requested.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "startDate",
+          "type": "String",
+          "test": "2016-11-14",
+          "info": "Required: Weight goal start date; in the format yyyy-MM-dd."
+        }, {
+          "name": "startWeight",
+          "type": "String",
+          "test": "65",
+          "info": "Required: Weight goal start weight; in the format X.XX, in the unit systems that corresponds to the Accept-Language header provided."
+        }, {
+          "name": "weight",
+          "type": "String",
+          "info": "Optional: Weight goal target weight; in the format X.XX, in the unit systems that corresponds to the Accept-Language header provided; required if user doesn't have an existing weight goal."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "test": "kg",
+          "info": "Optional: The measurement unit system to use for response values."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getWeightLogs",
+      "description": "This endpoint allow to retrieve a list of all user's body weight log entries for a given day using units in the unit systems which corresponds to the Accept-Language header provided. Body weight log entries are available only to authorized user. Body weight log entries in response are sorted exactly the same as they are presented on the Fitbit website.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "startDate",
+          "type": "String",
+          "test": "2016-11-14",
+          "info": "Required: The range start date, in the format yyyy-MM-dd or today."
+        }, {
+          "name": "endDate",
+          "type": "String",
+          "test": "7d",
+          "info": "Required: The range end date, in the format yyyy-MM-dd or one of options. Options are today, 1d, 7d, 30d, 1w, 1m. Note: The period must not be longer than 31 days."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: The measurement unit system to use for response values."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "logWeight",
+      "description": "This endpoint create log entry for a body weight using units in the unit systems that corresponds to the Accept-Language header provided and get a response in the format requested. Note: The returned Weight Log IDs are unique to the user, but not globally unique.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "weight",
+          "type": "String",
+          "test": "68",
+          "info": "Required: Weight - in the format X.XX."
+        }, {
+          "name": "date",
+          "type": "String",
+          "test": "2016-11-16",
+          "info": "Required: Log entry date - in the format yyyy-MM-dd."
+        }, {
+          "name": "time",
+          "type": "String",
+          "info": "Optional: Time of the measurement - hours and minutes in the format HH:mm:ss, which is set to the last second of the day if time is not provided."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: The measurement unit system to use for response values."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "deleteWeightLog",
+      "description": "This endpoint allow to delete a user's body weight log entry with the given ID.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "bodyWeightLogId",
+          "type": "String",
+          "info": "Required: The ID of the body weight log entry."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getDailyActivitySummary",
+      "description": "This endpoint retrieves a summary and list of a user's activities and activity log entries for a given day in the format requested using units in the unit system which corresponds to the Accept-Language header provided.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "date",
+          "type": "String",
+          "test": "2016-11-15",
+          "info": "Required: The date in the format yyyy-MM-dd."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: The measurement unit system to use for response values."
+        }, {
+          "name": "acceptLocale",
+          "type": "String",
+          "info": "Optional: The locale to use for response values."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getActivityIntradayTimeSeries",
+      "description": "This endpoint returns the Intraday Time Series for a given resource in the format requested. The endpoint mimics the Get Activity Time Series endpoint.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "resourcePath",
+          "type": "String",
+          "test": "activities/steps",
+          "info": "Required: The resource path of the desired data. Possible values: activities/calories, activities/steps, activities/distance, activities/floors, activities/elevation"
+        }, {
+          "name": "date",
+          "type": "String",
+          "test": "2016-11-14",
+          "info": "Required: The date, in the format yyyy-MM-dd or today."
+        }, {
+          "name": "detailLevel",
+          "type": "String",
+          "test": "15min",
+          "info": "Optional: Number of data points to include. Either 1min or 15min."
+        }, {
+          "name": "startTime",
+          "type": "String",
+          "info": "Optional: The start of the period, in the format HH:mm"
+        }, {
+          "name": "endTime",
+          "type": "String",
+          "test": "19:00",
+          "info": "Optional: The end of the period, in the format HH:mm"
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: The language to use for response values. Language is used to determine the activity measurement units returned."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getActivityTCX",
+      "description": "This endpoint retrieves the details of a user's location and heart rate data during a logged exercise activity.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The encoded ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "logId",
+          "type": "String",
+          "info": "Required: The activity's log ID. See README to find out how get logId."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "browseActivityTypes",
+      "description": "Get a tree of all valid Fitbit public activities from the activities catalog as well as private custom activities the user created in the format requested. If the activity has levels, also get a list of activity level details. Typically, an applications retrieve the complete list of activities once at startup to cache and show in the UI later.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getActivityType",
+      "description": "Returns the details of a specific activity in the Fitbit activities database in the format requested. If activity has levels, also returns a list of activity level details.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "activityId",
+          "type": "String",
+          "test": "90001",
+          "info": "Required: The activity ID."
+        }, {
+          "name": "acceptLocale",
+          "type": "String",
+          "info": "Optional: The measurement unit system to use for response values."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getFrequentActivities",
+      "description": "This endpoint retrieves a list of a user's frequent activities in the format requested using units in the unit system which corresponds to the Accept-Language header provided. A frequent activity record contains the distance and duration values recorded the last time the activity was logged. The record retrieved can be used to log the activity via the Log Activity endpoint with the same or adjusted values for distance and duration.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: The measurement unit system to use for response values."
+        }, {
+          "name": "acceptLocale",
+          "type": "String",
+          "info": "Optional: The locale to use for response values."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getRecentActivityTypes",
+      "description": "This endpoint retrieves a list of a user's recent activities types logged with some details of the last activity log of that type using units in the unit system which corresponds to the Accept-Language header provided. The record retrieved can be used to log the activity via the Log Activity endpoint with the same or adjusted values for distance and duration.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: The measurement unit system to use for response values."
+        }, {
+          "name": "acceptLocale",
+          "type": "String",
+          "info": "Optional: The locale to use for response values."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getFavoriteActivities",
+      "description": "This endpoint returns a list of a user's favorite activities.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "info": "Required: The encoded ID of the user. Use \"-\" (dash) for current logged-in user."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "addFavoriteActivity",
+      "description": "This endpoint add the activity with the given ID to user's list of favorite activities.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "activityId",
+          "type": "String",
+          "test": "12030",
+          "info": "Required: The ID of the activity to add to user's favorites."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "deleteFavoriteActivity",
+      "description": "This endpoint remove the activity with the given ID from a user's list of favorite activities.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "activityId",
+          "type": "String",
+          "test": "12030",
+          "info": "Required: The ID of the activity to be removed."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getActivityGoals",
+      "description": "This endpoint retrieve a user's current daily or weekly activity goals using measurement units as defined in the unit system, which corresponds to the Accept-Language header provided.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The encoded ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "period",
+          "type": "String",
+          "test": "daily",
+          "info": "Required: The period to be returned. Possible values: daily or weekly."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "updateActivityGoals",
+      "description": "This endpoint create or update a user's daily activity goals and return a response using units in the unit system which corresponds to the Accept-Language header provided.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The encoded ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "period",
+          "type": "String",
+          "test": "daily",
+          "info": "Required: The period to be updated. Possible values: daily or weekly."
+        }, {
+          "name": "caloriesOut",
+          "type": "String",
+          "info": "Optional: Goal value."
+        }, {
+          "name": "activeMinutes",
+          "type": "String",
+          "info": "Optional: Goal value."
+        }, {
+          "name": "floors",
+          "type": "String",
+          "info": "Optional: Goal value."
+        }, {
+          "name": "distance",
+          "type": "String",
+          "info": "Optional: Goal value. Format X.XX or integer."
+        }, {
+          "name": "steps",
+          "type": "String",
+          "test": "500",
+          "info": "Optional: Goal value."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: The measurement unit system to use for response values."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getLifetimeStats",
+      "description": "This endpoint retrieves the user's activity statistics in the format requested using units in the unit system which corresponds to the Accept-Language header provided. Activity statistics includes Lifetime and Best achievement values from the My Achievements tile on the website dashboard. Response contains both statistics from the tracker device and total numbers including tracker data and manual activity log entries as seen on the Fitbit website dashboard.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The encoded ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: The measurement unit system to use for response values."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getActivityTimeSeries",
+      "description": "This endpoint returns time series data in the specified range for a given resource in the format requested using units in the unit system that corresponds to the Accept-Language header provided.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "userId",
+          "type": "String",
+          "test": "-",
+          "info": "Required: The encoded ID of the user. Use \"-\" (dash) for current logged-in user."
+        }, {
+          "name": "resourcePath",
+          "type": "String",
+          "test": "activities/calories",
+          "info": "Required: The resource path; see README for more details."
+        }, {
+          "name": "startDate",
+          "type": "String",
+          "test": "2016-11-14",
+          "info": "Required: The range start date, in the format yyyy-MM-dd or today."
+        }, {
+          "name": "endDate",
+          "type": "String",
+          "test": "2016-11-20",
+          "info": "Required: The range end date, in the format yyyy-MM-dd or today. Also possible values for period: 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y. If uses period values, startDate will be end date for period."
+        }, {
+          "name": "acceptLanguage",
+          "type": "String",
+          "info": "Optional: The measurement unit system to use for response values."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "addSubscription",
+      "description": "You must add a subscription in your application so that users will get notifications and return a response in the format requested. The subscriptionId value provides a way to associate an update with a particular user stream in your application.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "collectionPath",
+          "type": "String",
+          "test": "foods",
+          "info": "Optional: This is the resource of the collection to receive notifications from (foods, activities, sleep, or body). If not present, subscription will be created for all collections. If you have both all and specific collection subscriptions, you will get duplicate notifications on that collections' updates. Each subscriber can have only one subscription for a specific user's collection. See README for more details."
+        }, {
+          "name": "subscriptionId",
+          "type": "String",
+          "test": "100",
+          "info": "Required: This is the unique ID of the subscription created by the API client application. Each ID must be unique across the entire set of subscribers and collections. The Fitbit servers will pass this ID back along with any notifications about the user indicated by the user parameter in the URL path."
+        }, {
+          "name": "xFitbitSubscriberId",
+          "type": "String",
+          "info": "Optional: The ID of the subscriber to receive notifications, as defined on dev.fitbit.com. If not present, the default subscriber is used."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getSubscriptions",
+      "description": "Get a list of a user's subscriptions for your application in the format requested. You can either fetch subscriptions for a specific collection or the entire list of subscriptions for the user.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "collectionPath",
+          "type": "String",
+          "test": "foods",
+          "info": "Optional: Collection to get subscriptions for (foods, activities, sleep, or body.) If not present, list will include all subscriptions for the user."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "removeSubscription",
+      "description": "Deletes a subscription for a user.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Required: The access token obtained from getAccessToken method."
+        }, {
+          "name": "subscriptionId",
+          "type": "String",
+          "test": "1",
+          "info": "Required: The ID of the subscription."
+        }, {
+          "name": "collectionPath",
+          "type": "String",
+          "test": "foods",
+          "info": "Optional: Collection to delete subscription form (foods, activities, sleep, or body.). If not present, subscriptions will be deleted from all collections."
+        }, {
+          "name": "xFitbitSubscriberId",
+          "type": "String",
+          "info": "Optional: The ID of the subscriber to receive notifications, as defined on dev.fitbit.com. If not present, the default subscriber is used. Recommended to fill."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }
+  ]
+}
