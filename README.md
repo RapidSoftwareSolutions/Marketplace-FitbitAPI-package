@@ -90,6 +90,8 @@ Fitbit provides a Web API for accessing data from Fitbit activity trackers, Aria
 * [addSubscription](#addSubscription)
 * [getSubscriptions](#getSubscriptions)
 * [removeSubscription](#removeSubscription)
+* [acceptLanguage options](#acceptLanguage)
+* [acceptLocale options](#acceptLocale)
  
 <a name="getAccessToken"/>
 ## FitbitAPI.getAccessToken
@@ -163,7 +165,7 @@ This endpoint updates a user's profile.
 | localeCountry         | String| Optional: Country; in the format "XX". You should specify either locale or both - localeLang and localeCountry (locale is higher priority).
 | startDayOfWeek        | String| Optional: Start day of the week; what day the week should start on. Either Sunday or Monday.
 | clockTimeDisplayFormat| String| Optional: How trackers with a clock should display the time. Either 12hour or 24hour.
-| acceptLanguage        | String| Optional: The measurement unit system to use for response values.
+| acceptLanguage        | String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="getBadges"/>
@@ -174,7 +176,7 @@ This endpoint retrieves the user's badges in the format requested. Response incl
 |---------------|-------|----------
 | accessToken   | String| Required: The access token obtained from getAccessToken method.
 | userId        | String| Required: The encoded ID of the user. Use "-" (dash) for current logged-in user.
-| acceptLanguage| String| Optional: The measurement unit system to use for response values.
+| acceptLanguage| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="getSleepGoal"/>
@@ -184,7 +186,7 @@ This endpoint returns a user's current sleep goal using unit in the unit system 
 | Field         | Type  | Description
 |---------------|-------|----------
 | accessToken   | String| Required: The access token obtained from getAccessToken method.
-| acceptLanguage| String| Optional: The measurement unit system to use for response values.
+| acceptLanguage| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="updateSleepGoal"/>
@@ -243,7 +245,7 @@ This endpoint returns time series data in the specified range for a given resour
 | resourcePath  | String| Required: The resource path; see the Resource Path Options in README for a list of options.
 | startDate     | String| Required: The range start date, in the format yyyy-MM-dd or today.
 | endDate       | String| Required: The end date of the range, in the format yyyy-MM-dd or today. Also supported values: 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y, or max. Remember that with short code endpoint will return data earlier startDate. See README for more details and examples.
-| acceptLanguage| String| Optional: The language to use for response values. Language is used to determine the food measurement units returned.
+| acceptLanguage| String| Optional: The language to use for response values. Language is used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 ### resourcePath options: 
 
@@ -268,7 +270,7 @@ This endpoint returns time series data in the specified range for a given resour
 | userId        | String| Required: The encoded ID of the user. Use "-" (dash) for current logged-in user.
 | startDate     | String| Required: The range start date, in the format yyyy-MM-dd or today.
 | endDate       | String| Required: The end date of the range, in the format yyyy-MM-dd or today. Also supported values: 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y, or max. Remember that with short code endpoint will return data earlier startDate. See README for more details and examples.
-| acceptLanguage| String| Optional: The language to use for response values. Language is used to determine the food measurement units returned.
+| acceptLanguage| String| Optional: The language to use for response values. Language is used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="getHeartRateIntradayTimeSeries"/>
@@ -314,7 +316,7 @@ This endpoint returns data of a user's friends in the format requested using uni
 |---------------|-------|----------
 | accessToken   | String| Required: The access token obtained from getAccessToken method.
 | userId        | String| Required: The encoded ID of the user. Use "-" (dash) for current logged-in user.
-| acceptLanguage| String| Optional: The language to use for response values. Language is used to determine the food measurement units returned.
+| acceptLanguage| String| Optional: The language to use for response values. Language is used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="getFriendInvitations"/>
@@ -374,7 +376,7 @@ This endpoint retrieves a summary and list of a user's water log entries for a g
 | accessToken   | String| Required: The access token obtained from getAccessToken method.
 | userId        | String| Required: The ID of the user. Use "-" (dash) for current logged-in user.
 | date          | String| Required: The date of records to be returned. In the format yyyy-MM-dd.
-| acceptLanguage| String| Optional: The language to use for response values. Language is used to determine the food measurement units returned.
+| acceptLanguage| String| Optional: The language to use for response values. Language is used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="getWaterGoal"/>
@@ -396,45 +398,41 @@ This endpoint returns time series data in the specified range for a given resour
 | accessToken   | String| Required: The access token obtained from getAccessToken method.
 | userId        | String| Required: The ID of the user. Use "-" (dash) for current logged-in user.
 | resourcePath  | String| Required: The resource path. Possible options are: foods/log/caloriesIn, foods/log/water.
-| startDate     | String| Required: The range start date, in the formatyyyy-MM-dd or today
-| endDate       | String| Required: The end date of the range, in the format yyyy-MM-dd or today. Also supported values: 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y. Remember that with short code endpoint will return data earlier startDate. See README for more details and examples.
-| acceptLanguage| String| Optional: The language to use for response values. Language is used to determine the food measurement units returned.
+| startDate     | String| Required: The range start date, in the format yyyy-MM-dd or today
+| endDate       | String| Required: The end date of the range, in the format yyyy-MM-dd or today. Also supported values: 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y.
+| acceptLanguage| String| Optional: The language to use for response values. Language is used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
-#### Example short code for 7d endDate with startDate = 2016-11-14. Returned data will contains dates before startDate
+#### Request will return data from date 2016-11-01 till 2016-11-07
 ```json
-{  
-    "foods-log-caloriesIn":[  
-        {  
-            "dateTime":"2016-11-08",
-            "value":"0"
-        },
-        {  
-            "dateTime":"2016-11-09",
-            "value":"0"
-        },
-        {  
-            "dateTime":"2016-11-10",
-            "value":"0"
-        },
-        {  
-            "dateTime":"2016-11-11",
-            "value":"0"
-        },
-        {  
-            "dateTime":"2016-11-12",
-            "value":"0"
-        },
-        {  
-            "dateTime":"2016-11-13",
-            "value":"0"
-        },
-        {  
-            "dateTime":"2016-11-14",
-            "value":"1110"
-        }
-    ]
+{
+    "accessToken": "xxxxxxxxxxx", 
+    "userId": "-", 
+    "resourcePath": "foods/log/caloriesIn",
+    "startDate": "2016-11-01",
+    "endDate": "2016-11-07"  
 }
 ```
+#### Request will return data from date 2016-11-01 till 2016-11-07
+```json
+{
+    "accessToken": "xxxxxxxxxxx", 
+    "userId": "-", 
+    "resourcePath": "foods/log/caloriesIn",  
+    "startDate": "2016-11-07",
+    "endDate": "7d"  
+}
+```
+#### Request will return data from date 2016-11-01 till 2016-11-30
+```json
+{  
+    "accessToken": "xxxxxxxxxxx", 
+    "userId": "-", 
+    "resourcePath": "foods/log/caloriesIn",
+    "startDate": "2016-11-30",
+    "endDate": "1m"  
+}
+```
+
 
 <a name="createFoodLog"/>
 ## FitbitAPI.createFoodLog
@@ -453,7 +451,7 @@ This endpoint endpoint creates a log entry for a food event and returns a respon
 | favorite      | String| Optional: true will add the food to the user's favorites after creating the log entry; false will not. Valid only with foodId.
 | brandName     | String| Optional: Brand name of food. Valid only with foodName parameter.
 | calories      | String| Optional: Calories for this serving size. Allowed with foodName parameter (defaults to zero); otherwise ignored.
-| acceptLanguage| String| Optional: The language to use for response values. Language is used to determine the food measurement units returned.
+| acceptLanguage| String| Optional: The language to use for response values. Language is used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="updateFoodLog"/>
@@ -469,7 +467,7 @@ This endpoint changes the quantity or calories consumed for a user's food log en
 | unitId        | String| Optional: ID of units used. Not required if the food log was created with the foodName parameter. Typically retrieved via a previous call to Get Food Logs, Search Foods, or Get Food Units.
 | amount        | String| Optional: Amount consumed; Not required if the food log was created with the foodName parameter. In the format X.XX, in the specified unitId.
 | calories      | String| Optional: Calories for this food log. Allowed if the food log was created with the foodName parameter (defaults to zero); otherwise ignored.
-| acceptLanguage| String| Optional: The language to use for response values. Language is used to determine the food measurement units returned.
+| acceptLanguage| String| Optional: The language to use for response values. Language is used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="logWater"/>
@@ -483,7 +481,7 @@ This endpoint creates a log entry for water using units in the unit systems that
 | date          | String| Required: Log entry date; in the format yyyy-MM-dd.
 | amount        | String| Required: Amount consumed; in the format X.X and in the specified waterUnit or in the unit system that corresponds to the Accept-Language header provided.
 | unit          | String| Optional: Water measurement unit. "ml", "fl oz", or "cup".
-| acceptLanguage| String| Optional: The language to use for response values. Language is used to determine the food measurement units returned.
+| acceptLanguage| String| Optional: The language to use for response values. Language is used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="updateFoodGoal"/>
@@ -497,8 +495,8 @@ This endpoint updates or creates a user's daily calorie consumption goal or food
 | calories      | String| Optional: Manual calorie consumption goal in integer format. Either calories or intensity must be provided.
 | intensity     | String| Optional: Food plan intensity (MAINTENANCE, EASIER, MEDIUM, KINDAHARD, or HARDER). Either calories or intensity must be provided.
 | personalized  | String| Optional: Food plan type; true or false.
-| acceptLanguage| String| Optional: The measurement unit system to use for parameters and response values.
-| acceptLocale  | String| Optional: The locale to use for response values.
+| acceptLanguage| String| Optional: The measurement unit system to use for parameters and response values. Example: en_US. For more details see in specified section at the bottom.
+| acceptLocale  | String| Optional: The locale to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="updateWaterGoal"/>
@@ -523,7 +521,7 @@ This endpoint allows to update a water log.
 | waterLogId    | String| Required: The ID of water log.
 | amount        | String| Required: Amount consumed; in the format X.X and in the specified waterUnit or in the unit system that corresponds to the Accept-Language header provided.
 | unit          | String| Optional: Water measurement unit. "ml", "fl oz", or "cup".
-| acceptLanguage| String| Optional: The measurement unit system to use for parameters and response values.
+| acceptLanguage| String| Optional: The measurement unit system to use for parameters and response values. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="deleteWaterLog"/>
@@ -545,7 +543,7 @@ This endpoint returns a list of a user's favorite foods in the format requested.
 |---------------|-------|----------
 | accessToken   | String| Required: The access token obtained from getAccessToken method.
 | userId        | String| Required: The ID of the user. Use "-" (dash) for current logged-in user.
-| acceptLanguage| String| Optional: Used to determine the food measurement units returned.
+| acceptLanguage| String| Optional: Used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="getFrequentFoods"/>
@@ -556,7 +554,7 @@ This endpoint returns a list of a user's frequent foods in the format requested.
 |---------------|-------|----------
 | accessToken   | String| Required: The access token obtained from getAccessToken method.
 | userId        | String| Required: The ID of the user. Use "-" (dash) for current logged-in user.
-| acceptLanguage| String| Optional: Used to determine the food measurement units returned.
+| acceptLanguage| String| Optional: Used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="getRecentFoods"/>
@@ -567,7 +565,7 @@ This endpoint returns a list of a user's recent foods in the format requested. A
 |---------------|-------|----------
 | accessToken   | String| Required: The access token obtained from getAccessToken method.
 | userId        | String| Required: The ID of the user. Use "-" (dash) for current logged-in user.
-| acceptLanguage| String| Optional: Used to determine the food measurement units returned.
+| acceptLanguage| String| Optional: Used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="addFavoriteFood"/>
@@ -599,7 +597,7 @@ This endpoint returns a list of meals created by user in his or her food log in 
 |---------------|-------|----------
 | accessToken   | String| Required: The access token obtained from getAccessToken method.
 | userId        | String| Required: The ID of the user. Use "-" (dash) for current logged-in user.
-| acceptLanguage| String| Optional: Used to determine the food measurement units returned.
+| acceptLanguage| String| Optional: Used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="createMeal"/>
@@ -613,7 +611,7 @@ This endpoint creates a meal with the given food contained in the post body.
 | name          | String| Required: Name of the meal.
 | description   | String| Required: Short description of the meal.
 | mealFoods     | JSON  | Required: Array of json objects. Object must contain foodId, unitId, amount. Ex.: [{"foodId" : <value>,"amount" : <value>,"unitId" : <value>}]. See README for more details and examples.
-| acceptLanguage| String| Optional: Used to determine the food measurement units returned.
+| acceptLanguage| String| Optional: Used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 #### mealFoods format
 ```json
@@ -650,7 +648,7 @@ This endpoint retrieves a meal for a user given the meal id.
 | accessToken   | String| Required: The access token obtained from getAccessToken method.
 | userId        | String| Required: The ID of the user. Use "-" (dash) for current logged-in user.
 | mealId        | String| Required: The ID of the meal.
-| acceptLanguage| String| Optional: Used to determine the food measurement units returned.
+| acceptLanguage| String| Optional: Used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="editMeal"/>
@@ -665,7 +663,7 @@ This endpoint replaces an existing meal with the contents of the request. The re
 | name          | String| Required: Name of the meal.
 | description   | String| Required: Short description of the meal.
 | mealFoods     | JSON  | Required: Array of json objects. Object must contain foodId, unitId, amount. Ex.: [{"foodId" : <value>,"amount" : <value>,"unitId" : <value>}]. See README for more details and examples.
-| acceptLanguage| String| Optional: Used to determine the food measurement units returned.
+| acceptLanguage| String| Optional: Used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 #### mealFoods format
 ```json
@@ -718,7 +716,7 @@ This endpoint creates a new private food for a user and returns a response in th
 | calories                    | String| Required: Calories in the default serving size.
 | formType                    | String| Optional: Form type (LIQUID or DRY.).
 | description                 | String| Optional: Description of the food.
-| acceptLanguage              | String| Optional: Used to determine the food measurement units returned.
+| acceptLanguage              | String| Optional: Used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="deleteCustomFood"/>
@@ -740,7 +738,7 @@ This endpoint returns the details of a specific food in the Fitbit food database
 |---------------|-------|----------
 | accessToken   | String| Required: The access token obtained from getAccessToken method.
 | foodId        | String| Required: The ID of the food to be deleted.
-| acceptLanguage| String| Optional: Used to determine the food measurement units returned.
+| acceptLanguage| String| Optional: Used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="getFoodUnits"/>
@@ -750,7 +748,7 @@ This endpoint returns a list of all valid Fitbit food units in the format reques
 | Field         | Type  | Description
 |---------------|-------|----------
 | accessToken   | String| Required: The access token obtained from getAccessToken method.
-| acceptLanguage| String| Optional: Used to determine the food measurement units returned.
+| acceptLanguage| String| Optional: Used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 <a name="searchFoods"/>
 ## FitbitAPI.searchFoods
@@ -760,7 +758,7 @@ This endpoint returns a list of public foods from Fitbit foods database and priv
 |---------------|-------|----------
 | accessToken   | String| Required: The access token obtained from getAccessToken method.
 | query         | String| Required: The URL-encoded search query.
-| acceptLanguage| String| Optional: Used to determine the food measurement units returned.
+| acceptLanguage| String| Optional: Used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 <a name="getFoodLogs"/>
 ## FitbitAPI.getFoodLogs
@@ -771,7 +769,7 @@ This endpoint returns a summary and list of a user's food log entries for a give
 | accessToken   | String| Required: The access token obtained from getAccessToken method.
 | userId        | String| Required: The ID of the user. Use "-" (dash) for current logged-in user.
 | date          | String| Required: The date of records to be returned. In the format yyyy-MM-dd.
-| acceptLanguage| String| Optional: Used to determine the food measurement units returned.
+| acceptLanguage| String| Optional: Used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="deleteFoodLog"/>
@@ -845,7 +843,7 @@ This endpoint allow to delete the user's device alarm entry with the given ID fo
 | userId        | String| Required: The ID of the user. Use "-" (dash) for current logged-in user.
 | trackerId     | String| Required: The ID of the tracker whose alarms is managed. The tracker-id value is found via the Get Devices endpoint.
 | alarmId       | String| Required: The ID of the alarm that is updated. The alarm-id value is found via the Get Alarms endpoint
-| acceptLanguage| String| Optional: The measurement unit system to use for response values.
+| acceptLanguage| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 <a name="getBodyFatLogs"/>
 ## FitbitAPI.getBodyFatLogs
@@ -857,7 +855,7 @@ This endpoint retrieves a list of all user's body fat log entries for a given da
 | userId        | String| Required: The ID of the user. Use "-" (dash) for current logged-in user.
 | startDate     | String| Required: The date in the format yyyy-MM-dd or "today".
 | endDate       | String| Optional: The date in the format yyyy-MM-dd or 1d, 7d, 1w, 1m. Note: The range should not be longer than 31 days.
-| acceptLanguage| String| Optional: The measurement unit system to use for response values.
+| acceptLanguage| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="logBodyFat"/>
@@ -871,7 +869,7 @@ This endpoint creates a log entry for body fat and returns a response in the for
 | fat           | String| Required: Body fat; in the format X.XX, in the unit system that corresponds to the Accept-Language header provided.
 | date          | String| Required: Log entry date; in the format yyyy-MM-dd.
 | time          | String| Optional: Time of the measurement; hours and minutes in the format HH:mm:ss, set to the last second of the day if not provided.
-| acceptLanguage| String| Optional: The measurement unit system to use for response values.
+| acceptLanguage| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="deleteBodyFatLog"/>
@@ -896,7 +894,7 @@ This endpoint return time series data in the specified range for a given resourc
 | resourcePath  | String| Required: The resource path. Options are "bmi", "fat", or "weight".
 | startDate     | String| Required: The range start date, in the format yyyy-MM-dd or today.
 | endDate       | String| Required: The range end date, in the format yyyy-MM-dd or one of options. Options are today, 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y, or max.
-| acceptLanguage| String| Optional: The language to use for response values. Language is used to determine the activity measurement units returned.
+| acceptLanguage| String| Optional: The language to use for response values. Language is used to determine the activity measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="getBodyGoals"/>
@@ -908,7 +906,7 @@ This endpoint allow to retrieve a user's current body fat percentage or weight g
 | accessToken   | String| Required: The access token obtained from getAccessToken method.
 | userId        | String| Required: The ID of the user. Use "-" (dash) for current logged-in user.
 | goalType      | String| Required: The type of goal for which data is returned. Possible values: weight or fat.
-| acceptLanguage| String| Optional: The measurement unit system to use for response values.
+| acceptLanguage| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="updateBodyFatGoal"/>
@@ -933,7 +931,7 @@ This endpoint create or update user's fat or weight goal using units in the unit
 | startDate     | String| Required: Weight goal start date; in the format yyyy-MM-dd.
 | startWeight   | String| Required: Weight goal start weight; in the format X.XX, in the unit systems that corresponds to the Accept-Language header provided.
 | weight        | String| Optional: Weight goal target weight; in the format X.XX, in the unit systems that corresponds to the Accept-Language header provided; required if user doesn't have an existing weight goal.
-| acceptLanguage| String| Optional: The measurement unit system to use for response values.
+| acceptLanguage| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="getWeightLogs"/>
@@ -946,7 +944,7 @@ This endpoint allow to retrieve a list of all user's body weight log entries for
 | userId        | String| Required: The ID of the user. Use "-" (dash) for current logged-in user.
 | startDate     | String| Required: The range start date, in the format yyyy-MM-dd or today.
 | endDate       | String| Required: The range end date, in the format yyyy-MM-dd or one of options. Options are today, 1d, 7d, 30d, 1w, 1m. Note: The period must not be longer than 31 days.
-| acceptLanguage| String| Optional: The measurement unit system to use for response values.
+| acceptLanguage| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="logWeight"/>
@@ -960,7 +958,7 @@ This endpoint create log entry for a body weight using units in the unit systems
 | weight        | String| Required: Weight - in the format X.XX.
 | date          | String| Required: Log entry date - in the format yyyy-MM-dd.
 | time          | String| Optional: Time of the measurement - hours and minutes in the format HH:mm:ss, which is set to the last second of the day if time is not provided.
-| acceptLanguage| String| Optional: The measurement unit system to use for response values.
+| acceptLanguage| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="deleteWeightLog"/>
@@ -983,8 +981,8 @@ This endpoint retrieves a summary and list of a user's activities and activity l
 | accessToken   | String| Required: The access token obtained from getAccessToken method.
 | userId        | String| Required: The ID of the user. Use "-" (dash) for current logged-in user.
 | date          | String| Required: The date in the format yyyy-MM-dd.
-| acceptLanguage| String| Optional: The measurement unit system to use for response values.
-| acceptLocale  | String| Optional: The locale to use for response values.
+| acceptLanguage| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
+| acceptLocale  | String| Optional: The locale to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="getActivityIntradayTimeSeries"/>
@@ -999,7 +997,7 @@ This endpoint returns the Intraday Time Series for a given resource in the forma
 | detailLevel   | String| Optional: Number of data points to include. Either 1min or 15min.
 | startTime     | String| Optional: The start of the period, in the format HH:mm
 | endTime       | String| Optional: The end of the period, in the format HH:mm
-| acceptLanguage| String| Optional: The language to use for response values. Language is used to determine the activity measurement units returned.
+| acceptLanguage| String| Optional: The language to use for response values. Language is used to determine the activity measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="getActivityTCX"/>
@@ -1037,7 +1035,7 @@ Returns the details of a specific activity in the Fitbit activities database in 
 |-------------|-------|----------
 | accessToken | String| Required: The access token obtained from getAccessToken method.
 | activityId  | String| Required: The activity ID.
-| acceptLocale| String| Optional: The measurement unit system to use for response values.
+| acceptLocale| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="getFrequentActivities"/>
@@ -1047,8 +1045,8 @@ This endpoint retrieves a list of a user's frequent activities in the format req
 | Field         | Type  | Description
 |---------------|-------|----------
 | accessToken   | String| Required: The access token obtained from getAccessToken method.
-| acceptLanguage| String| Optional: The measurement unit system to use for response values.
-| acceptLocale  | String| Optional: The locale to use for response values.
+| acceptLanguage| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
+| acceptLocale  | String| Optional: The locale to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 <a name="getRecentActivityTypes"/>
 ## FitbitAPI.getRecentActivityTypes
@@ -1057,8 +1055,8 @@ This endpoint retrieves a list of a user's recent activities types logged with s
 | Field         | Type  | Description
 |---------------|-------|----------
 | accessToken   | String| Required: The access token obtained from getAccessToken method.
-| acceptLanguage| String| Optional: The measurement unit system to use for response values.
-| acceptLocale  | String| Optional: The locale to use for response values.
+| acceptLanguage| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
+| acceptLocale  | String| Optional: The locale to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 <a name="getFavoriteActivities"/>
 ## FitbitAPI.getFavoriteActivities
@@ -1109,12 +1107,12 @@ This endpoint create or update a user's daily activity goals and return a respon
 | accessToken   | String| Required: The access token obtained from getAccessToken method.
 | userId        | String| Required: The encoded ID of the user. Use "-" (dash) for current logged-in user.
 | period        | String| Required: The period to be updated. Possible values: daily or weekly.
-| caloriesOut   | String| Optional: Goal value.
-| activeMinutes | String| Optional: Goal value.
+| caloriesOut   | String| Optional: Goal value for calories.
+| activeMinutes | String| Optional: Goal value for active minutes.
 | floors        | String| Optional: Goal value.
-| distance      | String| Optional: Goal value. Format X.XX or integer.
-| steps         | String| Optional: Goal value.
-| acceptLanguage| String| Optional: The measurement unit system to use for response values.
+| distance      | String| Optional: Goal value for distance. Format X.XX or integer.
+| steps         | String| Optional: Goal value for steps.
+| acceptLanguage| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="getLifetimeStats"/>
@@ -1125,7 +1123,7 @@ This endpoint retrieves the user's activity statistics in the format requested u
 |---------------|-------|----------
 | accessToken   | String| Required: The access token obtained from getAccessToken method.
 | userId        | String| Required: The encoded ID of the user. Use "-" (dash) for current logged-in user.
-| acceptLanguage| String| Optional: The measurement unit system to use for response values.
+| acceptLanguage| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 
 <a name="getActivityTimeSeries"/>
@@ -1139,7 +1137,7 @@ This endpoint returns time series data in the specified range for a given resour
 | resourcePath  | String| Required: The resource path; see README for more details.
 | startDate     | String| Required: The range start date, in the format yyyy-MM-dd or today.
 | endDate       | String| Required: The range end date, in the format yyyy-MM-dd or today. Also possible values for period: 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y. If uses period values, startDate will be end date for period.
-| acceptLanguage| String| Optional: The measurement unit system to use for response values.
+| acceptLanguage| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 #### resourcePath options
 ```json
@@ -1208,3 +1206,65 @@ Deletes a subscription for a user.
 | subscriptionId     | String| Required: The ID of the subscription.
 | collectionPath     | String| Optional: Collection to delete subscription form (foods, activities, sleep, or body.). If not present, subscriptions will be deleted from all collections.
 | xFitbitSubscriberId| String| Optional: The ID of the subscriber to receive notifications, as defined on dev.fitbit.com. If not present, the default subscriber is used. Recommended to fill.
+
+<a name="acceptLanguage"/>
+## acceptLanguage
+API calls reveal and log resource values in one of the unit systems based on the value of the Accept-Language header. If an endpoint respects the Accept-Language header, it is explicitly mentioned in the endpoint details.
+
+| Accept-Language                       | Unit System 
+|---------------------------------------|-------
+| en_US                                 | US
+| en_GB                                 | UK
+| none of the above or not provided     | METRIC
+
+###Unit Systems
+US
+| Unit Type             | Unit 
+|-----------------------|-------
+| duration              | milliseconds
+| distance              | miles
+| elevation             | feet
+| height                | inches
+| weight                | pounds
+| body measurements     | inches
+| liquids               | fluid ounces (fl oz)
+| blood glucose         | milligrams per deciliter (mg/dL) (mass concentration)
+
+UK
+| Unit Type             | Unit 
+|-----------------------|-------
+| duration              | milliseconds
+| distance              | kilometers
+| elevation             | meters
+| height                | centimeters
+| weight                | stone
+| body measurements     | centimeters
+| liquids               | milliliters
+| blood glucose         | millimoles per liter (mmol/l) (molar concentration)
+Note that the API uses decimal values for all unit types, so UK weight will be expressed as 10.5 stone instead of 10 stone 7 pounds.
+
+Metric
+| Unit Type             | Unit 
+|-----------------------|-------
+| duration              | milliseconds
+| distance              | kilometers
+| elevation             | meters
+| height                | centimeters
+| weight                | kilograms
+| body measurements     | centimeters
+| liquids               | milliliters
+| blood glucose         | millimoles per liter (mmol/dl) (molar concentration)
+
+<a name="acceptLocale"/>
+## acceptLocale
+Some of the API responses include text fields that may be suitable for displaying to the end user. Setting the Accept-Locale header will return a translated response if available. We currently support the following locales:
+| Accept-Language | Unit System 
+|-----------------|-------
+| en_AU           | Australia
+| fr_FR           | France
+| de_DE           | Germany
+| ja_JP           | Japan
+| en_NZ           | New Zealand
+| es_ES           | Spain
+| en_GB           | United Kingdom
+| en_US           | United States (default)

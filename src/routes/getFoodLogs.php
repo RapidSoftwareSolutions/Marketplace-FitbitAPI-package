@@ -47,7 +47,7 @@ $app->post('/api/FitbitAPI/getFoodLogs', function ($request, $response, $args) {
     $query_str = 'https://api.fitbit.com/1/user/'.$post_data['args']['userId'].'/foods/log/date/'.$post_data['args']['date'].'.json';
     
     $headers['Authorization'] = 'Bearer '.$post_data['args']['accessToken'];
-    if(!empty($post_data['args']['acceptLanguage'])) {
+    if(isset($post_data['args']['acceptLanguage']) && !empty($post_data['args']['acceptLanguage'])) {
         $headers['Accept-Language'] = $post_data['args']['acceptLanguage'];
     }
     

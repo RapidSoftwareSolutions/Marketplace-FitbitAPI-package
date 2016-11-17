@@ -44,7 +44,7 @@ $app->post('/api/FitbitAPI/getFrequentFoods', function ($request, $response, $ar
     $query_str = 'https://api.fitbit.com/1/user/'.$post_data['args']['userId'].'/foods/log/frequent.json';
     
     $headers['Authorization'] = 'Bearer '.$post_data['args']['accessToken'];
-    if(!empty($post_data['args']['acceptLanguage'])) {
+    if(isset($post_data['args']['acceptLanguage']) && !empty($post_data['args']['acceptLanguage'])) {
         $headers['Accept-Language'] = $post_data['args']['acceptLanguage'];
     }
     

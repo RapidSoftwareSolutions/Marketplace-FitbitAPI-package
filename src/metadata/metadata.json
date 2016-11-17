@@ -273,7 +273,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: The measurement unit system to use for response values."
+          "info": "Optional: The measurement unit system to use for response values. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -304,7 +304,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: The measurement unit system to use for response values."
+          "info": "Optional: The measurement unit system to use for response values. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -510,7 +510,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: The language to use for response values. Language is used to determine the food measurement units returned."
+          "info": "Optional: The language to use for response values. Language is used to determine the food measurement units returned. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -551,7 +551,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: The language to use for response values. Language is used to determine the food measurement units returned."
+          "info": "Optional: The language to use for response values. Language is used to determine the food measurement units returned. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -654,7 +654,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: The language to use for response values. Language is used to determine the food measurement units returned."
+          "info": "Optional: The language to use for response values. Language is used to determine the food measurement units returned. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -825,7 +825,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: The language to use for response values. Language is used to determine the food measurement units returned."
+          "info": "Optional: The language to use for response values. Language is used to determine the food measurement units returned. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -887,17 +887,17 @@
         {
           "name": "startDate",
           "type": "String",
-          "info": "Required: The range start date, in the formatyyyy-MM-dd or today"
+          "info": "Required: The range start date, in the format yyyy-MM-dd or today"
         },
         {
           "name": "endDate",
           "type": "String",
-          "info": "Required: The end date of the range, in the format yyyy-MM-dd or today. Also supported values: 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y. Remember that with short code endpoint will return data earlier startDate. See README for more details and examples."
+          "info": "Required: The end date of the range, in the format yyyy-MM-dd or today. Also supported values: 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y. See examples in a README."
         },
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: The language to use for response values. Language is used to determine the food measurement units returned."
+          "info": "Optional: The language to use for response values. Language is used to determine the food measurement units returned. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -973,7 +973,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: The language to use for response values. Language is used to determine the food measurement units returned."
+          "info": "Optional: The language to use for response values. Language is used to determine the food measurement units returned. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -1029,7 +1029,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: The language to use for response values. Language is used to determine the food measurement units returned."
+          "info": "Optional: The language to use for response values. Language is used to determine the food measurement units returned. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -1075,7 +1075,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: The language to use for response values. Language is used to determine the food measurement units returned."
+          "info": "Optional: The language to use for response values. Language is used to determine the food measurement units returned. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -1121,12 +1121,12 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: The measurement unit system to use for parameters and response values."
+          "info": "Optional: The measurement unit system to use for parameters and response values. Example: en_US. For more details see README."
         },
         {
           "name": "acceptLocale",
           "type": "String",
-          "info": "Optional: The locale to use for response values."
+          "info": "Optional: The locale to use for response values. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -1203,7 +1203,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: The measurement unit system to use for parameters and response values."
+          "info": "Optional: The measurement unit system to use for parameters and response values. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -1265,7 +1265,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: Used to determine the food measurement units returned."
+          "info": "Optional: Used to determine the food measurement units returned. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -1296,7 +1296,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: Used to determine the food measurement units returned."
+          "info": "Optional: Used to determine the food measurement units returned. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -1327,7 +1327,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: Used to determine the food measurement units returned."
+          "info": "Optional: Used to determine the food measurement units returned. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -1420,7 +1420,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: Used to determine the food measurement units returned."
+          "info": "Optional: Used to determine the food measurement units returned. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -1466,7 +1466,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: Used to determine the food measurement units returned."
+          "info": "Optional: Used to determine the food measurement units returned. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -1502,7 +1502,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: Used to determine the food measurement units returned."
+          "info": "Optional: Used to determine the food measurement units returned. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -1553,7 +1553,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: Used to determine the food measurement units returned."
+          "info": "Optional: Used to determine the food measurement units returned. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -1645,7 +1645,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: Used to determine the food measurement units returned."
+          "info": "Optional: Used to determine the food measurement units returned. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -1707,7 +1707,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: Used to determine the food measurement units returned."
+          "info": "Optional: Used to determine the food measurement units returned. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -1733,7 +1733,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: Used to determine the food measurement units returned."
+          "info": "Optional: Used to determine the food measurement units returned. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -1764,7 +1764,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: Used to determine the food measurement units returned."
+          "info": "Optional: Used to determine the food measurement units returned. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -1800,7 +1800,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: Used to determine the food measurement units returned."
+          "info": "Optional: Used to determine the food measurement units returned. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -2051,7 +2051,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: The measurement unit system to use for response values."
+          "info": "Optional: The measurement unit system to use for response values. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -2092,7 +2092,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: The measurement unit system to use for response values."
+          "info": "Optional: The measurement unit system to use for response values. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -2138,7 +2138,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: The measurement unit system to use for response values."
+          "info": "Optional: The measurement unit system to use for response values. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -2215,7 +2215,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: The language to use for response values. Language is used to determine the activity measurement units returned."
+          "info": "Optional: The language to use for response values. Language is used to determine the activity measurement units returned. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -2251,7 +2251,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: The measurement unit system to use for response values."
+          "info": "Optional: The measurement unit system to use for response values. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -2328,7 +2328,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: The measurement unit system to use for response values."
+          "info": "Optional: The measurement unit system to use for response values. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -2369,7 +2369,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: The measurement unit system to use for response values."
+          "info": "Optional: The measurement unit system to use for response values. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -2415,7 +2415,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: The measurement unit system to use for response values."
+          "info": "Optional: The measurement unit system to use for response values. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -2482,12 +2482,12 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: The measurement unit system to use for response values."
+          "info": "Optional: The measurement unit system to use for response values. Example: en_US. For more details see README."
         },
         {
           "name": "acceptLocale",
           "type": "String",
-          "info": "Optional: The locale to use for response values."
+          "info": "Optional: The locale to use for response values. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -2538,7 +2538,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: The language to use for response values. Language is used to determine the activity measurement units returned."
+          "info": "Optional: The language to use for response values. Language is used to determine the activity measurement units returned. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -2621,7 +2621,7 @@
         {
           "name": "acceptLocale",
           "type": "String",
-          "info": "Optional: The measurement unit system to use for response values."
+          "info": "Optional: The measurement unit system to use for response values. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -2647,12 +2647,12 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: The measurement unit system to use for response values."
+          "info": "Optional: The measurement unit system to use for response values. Example: en_US. For more details see README."
         },
         {
           "name": "acceptLocale",
           "type": "String",
-          "info": "Optional: The locale to use for response values."
+          "info": "Optional: The locale to use for response values. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -2678,12 +2678,12 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: The measurement unit system to use for response values."
+          "info": "Optional: The measurement unit system to use for response values. Example: en_US. For more details see README."
         },
         {
           "name": "acceptLocale",
           "type": "String",
-          "info": "Optional: The locale to use for response values."
+          "info": "Optional: The locale to use for response values. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -2828,12 +2828,12 @@
         {
           "name": "caloriesOut",
           "type": "String",
-          "info": "Optional: Goal value."
+          "info": "Optional: Goal value for calories."
         },
         {
           "name": "activeMinutes",
           "type": "String",
-          "info": "Optional: Goal value."
+          "info": "Optional: Goal value for active minutes."
         },
         {
           "name": "floors",
@@ -2843,17 +2843,17 @@
         {
           "name": "distance",
           "type": "String",
-          "info": "Optional: Goal value. Format X.XX or integer."
+          "info": "Optional: Goal value for distance. Format X.XX or integer."
         },
         {
           "name": "steps",
           "type": "String",
-          "info": "Optional: Goal value."
+          "info": "Optional: Goal value for steps."
         },
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: The measurement unit system to use for response values."
+          "info": "Optional: The measurement unit system to use for response values. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -2884,7 +2884,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: The measurement unit system to use for response values."
+          "info": "Optional: The measurement unit system to use for response values. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
@@ -2930,7 +2930,7 @@
         {
           "name": "acceptLanguage",
           "type": "String",
-          "info": "Optional: The measurement unit system to use for response values."
+          "info": "Optional: The measurement unit system to use for response values. Example: en_US. For more details see README."
         }
       ],
       "callbacks": [
