@@ -43,7 +43,6 @@ Fitbit provides a Web API for accessing data from Fitbit activity trackers, Aria
 * [deleteWaterLog](#deleteWaterLog)
 * [getFavoriteFoods](#getFavoriteFoods)
 * [getFrequentFoods](#getFrequentFoods)
-* [getRecentFoods](#getRecentFoods)
 * [addFavoriteFood](#addFavoriteFood)
 * [deleteFavoriteFood](#deleteFavoriteFood)
 * [getMeals](#getMeals)
@@ -59,10 +58,6 @@ Fitbit provides a Web API for accessing data from Fitbit activity trackers, Aria
 * [getFoodLogs](#getFoodLogs)
 * [deleteFoodLog](#deleteFoodLog)
 * [getDevices](#getDevices)
-* [getAlarms](#getAlarms)
-* [addAlarm](#addAlarm)
-* [updateAlarm](#updateAlarm)
-* [deleteAlarm](#deleteAlarm)
 * [getBodyFatLogs](#getBodyFatLogs)
 * [logBodyFat](#logBodyFat)
 * [deleteBodyFatLog](#deleteBodyFatLog)
@@ -75,7 +70,6 @@ Fitbit provides a Web API for accessing data from Fitbit activity trackers, Aria
 * [deleteWeightLog](#deleteWeightLog)
 * [getDailyActivitySummary](#getDailyActivitySummary)
 * [getActivityIntradayTimeSeries](#getActivityIntradayTimeSeries)
-* [getActivityTCX](#getActivityTCX)
 * [browseActivityTypes](#browseActivityTypes)
 * [getActivityType](#getActivityType)
 * [getFrequentActivities](#getFrequentActivities)
@@ -557,17 +551,6 @@ This endpoint returns a list of a user's frequent foods in the format requested.
 | acceptLanguage| String| Optional: Used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="getRecentFoods"/>
-## FitbitAPI.getRecentFoods
-This endpoint returns a list of a user's recent foods in the format requested. A recent food provides a quick way to log the food via the Log Food endpoint.
-
-| Field         | Type  | Description
-|---------------|-------|----------
-| accessToken   | String| Required: The access token obtained from getAccessToken method.
-| userId        | String| Required: The ID of the user. Use "-" (dash) for current logged-in user.
-| acceptLanguage| String| Optional: Used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
-
-
 <a name="addFavoriteFood"/>
 ## FitbitAPI.addFavoriteFood
 This endpoint adds a food with the given ID to the user's list of favorite foods.
@@ -790,61 +773,6 @@ This endpoint returns a list of the Fitbit devices connected to a user's account
 |------------|-------|----------
 | accessToken| String| Required: The access token obtained from getAccessToken method.
 
-<a name="getAlarms"/>
-## FitbitAPI.getAlarms
-This endpoint returns a list of the set alarms connected to a user's account.
-
-| Field      | Type  | Description
-|------------|-------|----------
-| accessToken| String| Required: The access token obtained from getAccessToken method.
-| userId     | String| Required: The ID of the user. Use "-" (dash) for current logged-in user.
-| trackerId  | String| Required: The ID of the tracker for which data is returned. The tracker-id value is found via the Get Devices endpoint.
-
-<a name="addAlarm"/>
-## FitbitAPI.addAlarm
-This endpoint adds the alarm settings to a given ID for a given device.
-
-| Field      | Type  | Description
-|------------|-------|----------
-| accessToken| String| Required: The access token obtained from getAccessToken method.
-| userId     | String| Required: The ID of the user. Use "-" (dash) for current logged-in user.
-| trackerId  | String| Required: The ID of the tracker for which data is returned. The tracker-id value is found via the Get Devices endpoint.
-| time       | String| Required: Time of day that the alarm vibrates with a UTC timezone offset, e.g. 07:15-08:00.
-| enabled    | String| Required: true or false. If false, alarm does not vibrate until enabled is set to true.
-| recurring  | String| Required: true or false. If false, the alarm is a single event.
-| weekDays   | String| Required: Comma separated list of days of the week on which the alarm vibrates, e.g. MONDAY,TUESDAY
-
-<a name="updateAlarm"/>
-## FitbitAPI.updateAlarm
-This endpoint updates the alarm entry with a given ID for a given device. It also gets a response in the format requested.
-
-| Field       | Type  | Description
-|-------------|-------|----------
-| accessToken | String| Required: The access token obtained from getAccessToken method.
-| userId      | String| Required: The ID of the user. Use "-" (dash) for current logged-in user.
-| trackerId   | String| Required: The ID of the tracker for which data is returned. The tracker-id value is found via the Get Devices endpoint.
-| alarmId     | String| Required: The ID of the alarm to be updated. The alarm-id value is found in the response of the Get Alarms endpoint.
-| time        | String| Required: Time of day that the alarm vibrates with a UTC timezone offset, e.g. 07:15-08:00.
-| enabled     | String| Required: true or false. If false, alarm does not vibrate until enabled is set to true.
-| recurring   | String| Required: true or false. If false, the alarm is a single event.
-| weekDays    | String| Required: Comma separated list of days of the week on which the alarm vibrates, e.g. MONDAY,TUESDAY
-| snoozeLength| String| Required: Minutes between alarms; integer value.
-| snoozeCount | String| Required: Maximum snooze count; integer value.
-| label       | String| Optional: Label for the alarm; string value.
-| vibe        | String| Optional: Vibe pattern; only one value for now - DEFAULT.
-
-<a name="deleteAlarm"/>
-## FitbitAPI.deleteAlarm
-This endpoint allow to delete the user's device alarm entry with the given ID for a given device.
-
-| Field         | Type  | Description
-|---------------|-------|----------
-| accessToken   | String| Required: The access token obtained from getAccessToken method.
-| userId        | String| Required: The ID of the user. Use "-" (dash) for current logged-in user.
-| trackerId     | String| Required: The ID of the tracker whose alarms is managed. The tracker-id value is found via the Get Devices endpoint.
-| alarmId       | String| Required: The ID of the alarm that is updated. The alarm-id value is found via the Get Alarms endpoint
-| acceptLanguage| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
-
 <a name="getBodyFatLogs"/>
 ## FitbitAPI.getBodyFatLogs
 This endpoint retrieves a list of all user's body fat log entries for a given day in the format requested. Body fat log entries are available only to authorized user. If you need to fetch only the most recent entry, you can use the Get Body Measurements endpoint.
@@ -998,25 +926,6 @@ This endpoint returns the Intraday Time Series for a given resource in the forma
 | startTime     | String| Optional: The start of the period, in the format HH:mm
 | endTime       | String| Optional: The end of the period, in the format HH:mm
 | acceptLanguage| String| Optional: The language to use for response values. Language is used to determine the activity measurement units returned. Example: en_US. For more details see in specified section at the bottom.
-
-
-<a name="getActivityTCX"/>
-## FitbitAPI.getActivityTCX
-This endpoint retrieves the details of a user's location and heart rate data during a logged exercise activity.
-
-| Field      | Type  | Description
-|------------|-------|----------
-| accessToken| String| Required: The access token obtained from getAccessToken method.
-| userId     | String| Required: The encoded ID of the user. Use "-" (dash) for current logged-in user.
-| logId      | String| Required: The activity's log ID. See README to find out how get logId.
-
-#### How to get logId
-```
-Go to the Activity Logs page in the Fitbit Web app. 
-Click View Details button on the Activity History pane that contains GPS data. 
-The activity log id will be in the URL, e.g. 213560689 in https://www.fitbit.com/activities/exercise/213560689 . 
-The GPS activities appears in the Get Activities and Get Activities List endpoints contains GPS activities.
-```
 
 
 <a name="browseActivityTypes"/>
