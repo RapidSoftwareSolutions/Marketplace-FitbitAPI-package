@@ -9,85 +9,7 @@ Fitbit provides a Web API for accessing data from Fitbit activity trackers, Aria
 2. [Register an app](https://dev.fitbit.com/apps/new)
 3. After creation your app you will see Client ID and Client Secret
 
-## TOC: 
-* [getAccessToken](#getAccessToken)
-* [refreshingTokens](#refreshingTokens)
-* [revokingAccessTokens](#revokingAccessTokens)
-* [getProfile](#getProfile)
-* [updateProfile](#updateProfile)
-* [getBadges](#getBadges)
-* [getSleepGoal](#getSleepGoal)
-* [updateSleepGoal](#updateSleepGoal)
-* [logSleep](#logSleep)
-* [deleteSleepLog](#deleteSleepLog)
-* [getSleepLogs](#getSleepLogs)
-* [getSleepTimeSeries](#getSleepTimeSeries)
-* [getHeartRateTimeSeries](#getHeartRateTimeSeries)
-* [getHeartRateIntradayTimeSeries](#getHeartRateIntradayTimeSeries)
-* [getFriendsLeaderboard](#getFriendsLeaderboard)
-* [getFriends](#getFriends)
-* [getFriendInvitations](#getFriendInvitations)
-* [inviteFriend](#inviteFriend)
-* [respondToFriendInvitation](#respondToFriendInvitation)
-* [getFoodLocales](#getFoodLocales)
-* [getFoodGoals](#getFoodGoals)
-* [getWaterLogs](#getWaterLogs)
-* [getWaterGoal](#getWaterGoal)
-* [getFoodOrWaterTimeSeries](#getFoodOrWaterTimeSeries)
-* [createFoodLog](#createFoodLog)
-* [updateFoodLog](#updateFoodLog)
-* [logWater](#logWater)
-* [updateFoodGoal](#updateFoodGoal)
-* [updateWaterGoal](#updateWaterGoal)
-* [updateWaterLog](#updateWaterLog)
-* [deleteWaterLog](#deleteWaterLog)
-* [getFavoriteFoods](#getFavoriteFoods)
-* [getFrequentFoods](#getFrequentFoods)
-* [addFavoriteFood](#addFavoriteFood)
-* [deleteFavoriteFood](#deleteFavoriteFood)
-* [getMeals](#getMeals)
-* [createMeal](#createMeal)
-* [getSingleMeal](#getSingleMeal)
-* [editMeal](#editMeal)
-* [deleteMeal](#deleteMeal)
-* [createFood](#createFood)
-* [deleteCustomFood](#deleteCustomFood)
-* [getFood](#getFood)
-* [getFoodUnits](#getFoodUnits)
-* [searchFoods](#searchFoods)
-* [getFoodLogs](#getFoodLogs)
-* [deleteFoodLog](#deleteFoodLog)
-* [getDevices](#getDevices)
-* [getBodyFatLogs](#getBodyFatLogs)
-* [logBodyFat](#logBodyFat)
-* [deleteBodyFatLog](#deleteBodyFatLog)
-* [getBodyTimeSeries](#getBodyTimeSeries)
-* [getBodyGoals](#getBodyGoals)
-* [updateBodyFatGoal](#updateBodyFatGoal)
-* [updateWeightGoal](#updateWeightGoal)
-* [getWeightLogs](#getWeightLogs)
-* [logWeight](#logWeight)
-* [deleteWeightLog](#deleteWeightLog)
-* [getDailyActivitySummary](#getDailyActivitySummary)
-* [getActivityIntradayTimeSeries](#getActivityIntradayTimeSeries)
-* [browseActivityTypes](#browseActivityTypes)
-* [getActivityType](#getActivityType)
-* [getFrequentActivities](#getFrequentActivities)
-* [getRecentActivityTypes](#getRecentActivityTypes)
-* [getFavoriteActivities](#getFavoriteActivities)
-* [addFavoriteActivity](#addFavoriteActivity)
-* [deleteFavoriteActivity](#deleteFavoriteActivity)
-* [getActivityGoals](#getActivityGoals)
-* [updateActivityGoals](#updateActivityGoals)
-* [getLifetimeStats](#getLifetimeStats)
-* [getActivityTimeSeries](#getActivityTimeSeries)
-* [addSubscription](#addSubscription)
-* [getSubscriptions](#getSubscriptions)
-* [removeSubscription](#removeSubscription)
-* [acceptLanguage options](#acceptLanguageOptions)
-* [acceptLocale options](#acceptLocale)
  
-<a name="getAccessToken"/>
 ## FitbitAPI.getAccessToken
 This endpoint allows to get a token on behalf of a user.
 
@@ -100,7 +22,6 @@ This endpoint allows to get a token on behalf of a user.
 | state       | String     | Optional: Required if specified in the redirect to the authorization page. Must be an exact match.
 | expiresIn   | String     | Optional: Specify the desired access token lifetime. Defaults to 28800. 3600 for 1 hour, 28800 for 8 hours.
 
-<a name="refreshingTokens"/>
 ## FitbitAPI.refreshingTokens
 This endpoint allows to get a token from refresh token.
 
@@ -111,7 +32,6 @@ This endpoint allows to get a token from refresh token.
 | refreshToken| String     | Required: The refresh token obtained from getAccessToken method.
 | expiresIn   | String     | Optional: Specify the desired access token lifetime. Defaults to 28800. 3600 for 1 hour, 28800 for 8 hours.
 
-<a name="revokingAccessTokens"/>
 ## FitbitAPI.revokingAccessTokens
 This endpoint allows to revoke an access token.
 
@@ -121,7 +41,6 @@ This endpoint allows to revoke an access token.
 | clientSecret| credentials| Required: The secret of your application obtained from Fitbit.
 | accessToken | String     | Required: The access token obtained from getAccessToken method.
 
-<a name="getProfile"/>
 ## FitbitAPI.getProfile
 This endpoint returns a user's profile. The authenticated owner receives all values.
 
@@ -130,7 +49,6 @@ This endpoint returns a user's profile. The authenticated owner receives all val
 | accessToken| String| Required: The access token obtained from getAccessToken method.
 | userId     | String| Required: The encoded ID of the user. Use "-" (dash) for current logged-in user.
 
-<a name="updateProfile"/>
 ## FitbitAPI.updateProfile
 This endpoint updates a user's profile.
 
@@ -162,7 +80,6 @@ This endpoint updates a user's profile.
 | acceptLanguage        | String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="getBadges"/>
 ## FitbitAPI.getBadges
 This endpoint retrieves the user's badges in the format requested. Response includes all badges for the user as seen on the Fitbit website badge locker (both activity and weight related.)
 
@@ -173,7 +90,6 @@ This endpoint retrieves the user's badges in the format requested. Response incl
 | acceptLanguage| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="getSleepGoal"/>
 ## FitbitAPI.getSleepGoal
 This endpoint returns a user's current sleep goal using unit in the unit system that corresponds to the Accept-Language header provided in the format requested.
 
@@ -183,7 +99,6 @@ This endpoint returns a user's current sleep goal using unit in the unit system 
 | acceptLanguage| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="updateSleepGoal"/>
 ## FitbitAPI.updateSleepGoal
 This endpoint creates or updates a user's sleep goal and get a response in the in the format requested.
 
@@ -193,7 +108,6 @@ This endpoint creates or updates a user's sleep goal and get a response in the i
 | minDuration| String| Required: The target sleep duration is in minutes.
 
 
-<a name="logSleep"/>
 ## FitbitAPI.logSleep
 This endpoint creates a log entry for a sleep event and returns a response in the format requested. Keep in mind that it is NOT possible to create overlapping log entries or entries for time periods that DO NOT originate from a tracker. Sleep log entries appear on website's sleep tracker interface according to the date on which the sleep event ends.
 
@@ -206,7 +120,6 @@ This endpoint creates a log entry for a sleep event and returns a response in th
 | date       | String| Required: Log entry date in the format yyyy-MM-dd.
 
 
-<a name="deleteSleepLog"/>
 ## FitbitAPI.deleteSleepLog
 This endpoint deletes a user's sleep log entry with the given ID.
 
@@ -216,7 +129,6 @@ This endpoint deletes a user's sleep log entry with the given ID.
 | userId     | String| Required: The encoded ID of the user. Use "-" (dash) for current logged-in user.
 | logId      | String| Required: ID of the sleep log to be deleted.
 
-<a name="getSleepLogs"/>
 ## FitbitAPI.getSleepLogs
 This endpoint returns a summary and list of a user's sleep log entries as well as minute by minute sleep entry data for a given day in the format requested. The endpoint response includes summary for all sleep log entries for the given day (including naps.). The relationship between sleep log entry properties is expressed with the following equation: timeInBed = minutesToFallAsleep + minutesAsleep + minutesAwake + minutesAfterWakeup
 
@@ -228,7 +140,6 @@ This endpoint returns a summary and list of a user's sleep log entries as well a
 | isMainSleep| String| Optional: If you need to fetch data only for the user's main sleep event, you can send the request with isMainSleep=true
 
 
-<a name="getSleepTimeSeries"/>
 ## FitbitAPI.getSleepTimeSeries
 This endpoint returns time series data in the specified range for a given resource in the format requested using units in the unit system that corresponds to the Accept-Language header provided.
 
@@ -254,7 +165,6 @@ sleep/minutesAfterWakeup
 sleep/efficiency
 ```
 
-<a name="getHeartRateTimeSeries"/>
 ## FitbitAPI.getHeartRateTimeSeries
 This endpoint returns time series data in the specified range for a given resource in the format requested using units in the unit systems that corresponds to the Accept-Language header provided.
 
@@ -267,7 +177,6 @@ This endpoint returns time series data in the specified range for a given resour
 | acceptLanguage| String| Optional: The language to use for response values. Language is used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="getHeartRateIntradayTimeSeries"/>
 ## FitbitAPI.getHeartRateIntradayTimeSeries
 This endpoint returns the intraday time series for a given resource in the format requested. If your application has the appropriate access, your calls to a time series endpoint for a specific day (by using start and end dates on the same day or a period of 1d), the response will include extended intraday values with a one-minute detail level for that day.
 
@@ -292,7 +201,6 @@ sleep/minutesToFallAsleep
 sleep/minutesAfterWakeup  
 sleep/efficiency
 ```
-<a name="getFriendsLeaderboard"/>
 ## FitbitAPI.getFriendsLeaderboard
 This endpoint gets the user's friends leaderboard in the format requested using units in the unit system which corresponds to the Accept-Language header provided.
 
@@ -302,7 +210,6 @@ This endpoint gets the user's friends leaderboard in the format requested using 
 | userId     | String| Required: The encoded ID of the user. Use "-" (dash) for current logged-in user.
 
 
-<a name="getFriends"/>
 ## FitbitAPI.getFriends
 This endpoint returns data of a user's friends in the format requested using units in the unit system which corresponds to the Accept-Language header provided.
 
@@ -313,7 +220,6 @@ This endpoint returns data of a user's friends in the format requested using uni
 | acceptLanguage| String| Optional: The language to use for response values. Language is used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="getFriendInvitations"/>
 ## FitbitAPI.getFriendInvitations
 This endpoint returns data of a user's friends in the format requested using units in the unit system which corresponds to the Accept-Language header provided.
 
@@ -323,7 +229,6 @@ This endpoint returns data of a user's friends in the format requested using uni
 | userId     | String| Required: The encoded ID of the user. Use "-" (dash) for current logged-in user.
 
 
-<a name="inviteFriend"/>
 ## FitbitAPI.inviteFriend
 This endpoint creates an invitation to become friends with the authorized user. Warning: Be careful when using the Invite Friend endpoint and, as always, adhere to the Terms of Service. Though Fitbit has organic limits on allowed number of invitations, your application's workflow must not allow users to send bulk invitations to users. Doing so could be considered SPAM.
 
@@ -333,7 +238,6 @@ This endpoint creates an invitation to become friends with the authorized user. 
 | invitedUserEmail| String| Optional: Email of the user to invite. Does not need to be a Fitbit member. Either invitedUserEmail or invitedUserId is required.
 | invitedUserId   | String| Optional: Encoded ID of the invited user. Either invitedUserEmail or invitedUserId is required.
 
-<a name="respondToFriendInvitation"/>
 ## FitbitAPI.respondToFriendInvitation
 This endpoint accepts or rejects an invitation to become friends with inviting user.
 
@@ -343,7 +247,6 @@ This endpoint accepts or rejects an invitation to become friends with inviting u
 | fromUserId | String| Required: Encoded ID of user from which to accept or reject invitation.
 | accept     | String| Required: Accept or reject invitation. 'true' or 'false'.
 
-<a name="getFoodLocales"/>
 ## FitbitAPI.getFoodLocales
 This endpoint returns the food locales that the user may choose to search, log, and create food in.
 
@@ -351,7 +254,6 @@ This endpoint returns the food locales that the user may choose to search, log, 
 |------------|-------|----------
 | accessToken| String| Required: The access token obtained from getAccessToken method.
 
-<a name="getFoodGoals"/>
 ## FitbitAPI.getFoodGoals
 This endpoint returns a user's current daily calorie consumption goal and/or food Plan in the format requested.
 
@@ -361,7 +263,6 @@ This endpoint returns a user's current daily calorie consumption goal and/or foo
 | userId     | String| Required: The ID of the user. Use "-" (dash) for current logged-in user.
 
 
-<a name="getWaterLogs"/>
 ## FitbitAPI.getWaterLogs
 This endpoint retrieves a summary and list of a user's water log entries for a given day in the format requested using units in the unit system that corresponds to the Accept-Language header provided.
 
@@ -373,7 +274,6 @@ This endpoint retrieves a summary and list of a user's water log entries for a g
 | acceptLanguage| String| Optional: The language to use for response values. Language is used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="getWaterGoal"/>
 ## FitbitAPI.getWaterGoal
 This endpoint returns a user's current water goal.
 
@@ -383,7 +283,6 @@ This endpoint returns a user's current water goal.
 | userId     | String| Required: The ID of the user. Use "-" (dash) for current logged-in user.
 
 
-<a name="getFoodOrWaterTimeSeries"/>
 ## FitbitAPI.getFoodOrWaterTimeSeries
 This endpoint returns time series data in the specified range for a given resource in the format requested using units in the unit systems that corresponds to the Accept-Language header provided.
 
@@ -428,7 +327,6 @@ This endpoint returns time series data in the specified range for a given resour
 ```
 
 
-<a name="createFoodLog"/>
 ## FitbitAPI.createFoodLog
 This endpoint endpoint creates a log entry for a food event and returns a response in the format requested.
 
@@ -448,7 +346,6 @@ This endpoint endpoint creates a log entry for a food event and returns a respon
 | acceptLanguage| String| Optional: The language to use for response values. Language is used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="updateFoodLog"/>
 ## FitbitAPI.updateFoodLog
 This endpoint changes the quantity or calories consumed for a user's food log entry with the given ID.
 
@@ -464,7 +361,6 @@ This endpoint changes the quantity or calories consumed for a user's food log en
 | acceptLanguage| String| Optional: The language to use for response values. Language is used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="logWater"/>
 ## FitbitAPI.logWater
 This endpoint creates a log entry for water using units in the unit systems that corresponds to the Accept-Language header provided.
 
@@ -478,7 +374,6 @@ This endpoint creates a log entry for water using units in the unit systems that
 | acceptLanguage| String| Optional: The language to use for response values. Language is used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="updateFoodGoal"/>
 ## FitbitAPI.updateFoodGoal
 This endpoint updates or creates a user's daily calorie consumption goal or food plan and returns a response in the format requested. Food plan exists only if user already as an active weight goal crated via the Update Weight Goal endpoint.
 
@@ -493,7 +388,6 @@ This endpoint updates or creates a user's daily calorie consumption goal or food
 | acceptLocale  | String| Optional: The locale to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="updateWaterGoal"/>
 ## FitbitAPI.updateWaterGoal
 This endpoint updates or creates a user's daily calorie consumption goal or food plan and returns a response in the format requested.
 
@@ -504,7 +398,6 @@ This endpoint updates or creates a user's daily calorie consumption goal or food
 | target     | String| Required: Target water goal in the format X.X is set in unit based on locale.
 
 
-<a name="updateWaterLog"/>
 ## FitbitAPI.updateWaterLog
 This endpoint allows to update a water log.
 
@@ -518,7 +411,6 @@ This endpoint allows to update a water log.
 | acceptLanguage| String| Optional: The measurement unit system to use for parameters and response values. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="deleteWaterLog"/>
 ## FitbitAPI.deleteWaterLog
 This endpoint deletes a user's water log entry with the given ID.
 
@@ -529,7 +421,6 @@ This endpoint deletes a user's water log entry with the given ID.
 | waterLogId | String| Required: The id of the water log entry to be deleted.
 
 
-<a name="getFavoriteFoods"/>
 ## FitbitAPI.getFavoriteFoods
 This endpoint returns a list of a user's favorite foods in the format requested. A favorite food in the list provides a quick way to log the food via the Log Food endpoint.
 
@@ -540,7 +431,6 @@ This endpoint returns a list of a user's favorite foods in the format requested.
 | acceptLanguage| String| Optional: Used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="getFrequentFoods"/>
 ## FitbitAPI.getFrequentFoods
 This endpoint returns a list of a user's frequent foods in the format requested. A frequent food in the list provides a quick way to log the food via the Log Food endpoint.
 
@@ -551,7 +441,6 @@ This endpoint returns a list of a user's frequent foods in the format requested.
 | acceptLanguage| String| Optional: Used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="addFavoriteFood"/>
 ## FitbitAPI.addFavoriteFood
 This endpoint adds a food with the given ID to the user's list of favorite foods.
 
@@ -561,7 +450,6 @@ This endpoint adds a food with the given ID to the user's list of favorite foods
 | userId     | String| Required: The ID of the user. Use "-" (dash) for current logged-in user.
 | foodId     | String| Required: The ID of the food to be removed.
 
-<a name="deleteFavoriteFood"/>
 ## FitbitAPI.deleteFavoriteFood
 This endpoint deletes a food with the given ID to the user's list of favorite foods.
 
@@ -572,7 +460,6 @@ This endpoint deletes a food with the given ID to the user's list of favorite fo
 | foodId     | String| Required: The ID of the food to be removed.
 
 
-<a name="getMeals"/>
 ## FitbitAPI.getMeals
 This endpoint returns a list of meals created by user in his or her food log in the format requested. Meals in the list provide a quick way to log several foods at a time via the calls to the Log Food endpoint.
 
@@ -583,7 +470,6 @@ This endpoint returns a list of meals created by user in his or her food log in 
 | acceptLanguage| String| Optional: Used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="createMeal"/>
 ## FitbitAPI.createMeal
 This endpoint creates a meal with the given food contained in the post body.
 
@@ -622,7 +508,6 @@ This endpoint creates a meal with the given food contained in the post body.
 ]
 ```
 
-<a name="getSingleMeal"/>
 ## FitbitAPI.getSingleMeal
 This endpoint retrieves a meal for a user given the meal id.
 
@@ -634,7 +519,6 @@ This endpoint retrieves a meal for a user given the meal id.
 | acceptLanguage| String| Optional: Used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="editMeal"/>
 ## FitbitAPI.editMeal
 This endpoint replaces an existing meal with the contents of the request. The response contains the updated meal.
 
@@ -674,7 +558,6 @@ This endpoint replaces an existing meal with the contents of the request. The re
 ]
 ```
 
-<a name="deleteMeal"/>
 ## FitbitAPI.deleteMeal
 This endpoint allows to delete a user's meal with the given meal id.
 
@@ -685,7 +568,6 @@ This endpoint allows to delete a user's meal with the given meal id.
 | mealId     | String| Required: The ID of the meal.
 
 
-<a name="createFood"/>
 ## FitbitAPI.createFood
 This endpoint creates a new private food for a user and returns a response in the format requested. The created food is found via the Search Foods call.
 
@@ -702,7 +584,6 @@ This endpoint creates a new private food for a user and returns a response in th
 | acceptLanguage              | String| Optional: Used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="deleteCustomFood"/>
 ## FitbitAPI.deleteCustomFood
 This endpoint deletes custom food for a user and returns a response in the format requested.
 
@@ -713,7 +594,6 @@ This endpoint deletes custom food for a user and returns a response in the forma
 | foodId     | String| Required: The ID of the food to be deleted.
 
 
-<a name="getFood"/>
 ## FitbitAPI.getFood
 This endpoint returns the details of a specific food in the Fitbit food database or a private food the authorized user has entered in the format requested.
 
@@ -724,7 +604,6 @@ This endpoint returns the details of a specific food in the Fitbit food database
 | acceptLanguage| String| Optional: Used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="getFoodUnits"/>
 ## FitbitAPI.getFoodUnits
 This endpoint returns a list of all valid Fitbit food units in the format requested.
 
@@ -733,7 +612,6 @@ This endpoint returns a list of all valid Fitbit food units in the format reques
 | accessToken   | String| Required: The access token obtained from getAccessToken method.
 | acceptLanguage| String| Optional: Used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
-<a name="searchFoods"/>
 ## FitbitAPI.searchFoods
 This endpoint returns a list of public foods from Fitbit foods database and private foods the user created in the format requested.
 
@@ -743,7 +621,6 @@ This endpoint returns a list of public foods from Fitbit foods database and priv
 | query         | String| Required: The URL-encoded search query.
 | acceptLanguage| String| Optional: Used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
-<a name="getFoodLogs"/>
 ## FitbitAPI.getFoodLogs
 This endpoint returns a summary and list of a user's food log entries for a given day in the format requested.
 
@@ -755,7 +632,6 @@ This endpoint returns a summary and list of a user's food log entries for a give
 | acceptLanguage| String| Optional: Used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="deleteFoodLog"/>
 ## FitbitAPI.deleteFoodLog
 This endpoint deletes a user's food log entry with the given ID.
 
@@ -765,7 +641,6 @@ This endpoint deletes a user's food log entry with the given ID.
 | userId     | String| Required: The ID of the user. Use "-" (dash) for current logged-in user.
 | foodLogId  | String| Required: The id of the food log entry to be deleted.
 
-<a name="getDevices"/>
 ## FitbitAPI.getDevices
 This endpoint returns a list of the Fitbit devices connected to a user's account.
 
@@ -773,7 +648,6 @@ This endpoint returns a list of the Fitbit devices connected to a user's account
 |------------|-------|----------
 | accessToken| String| Required: The access token obtained from getAccessToken method.
 
-<a name="getBodyFatLogs"/>
 ## FitbitAPI.getBodyFatLogs
 This endpoint retrieves a list of all user's body fat log entries for a given day in the format requested. Body fat log entries are available only to authorized user. If you need to fetch only the most recent entry, you can use the Get Body Measurements endpoint.
 
@@ -786,7 +660,6 @@ This endpoint retrieves a list of all user's body fat log entries for a given da
 | acceptLanguage| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="logBodyFat"/>
 ## FitbitAPI.logBodyFat
 This endpoint creates a log entry for body fat and returns a response in the format requested. Note: The returned Body Fat Log IDs are unique to the user, but not globally unique.
 
@@ -800,7 +673,6 @@ This endpoint creates a log entry for body fat and returns a response in the for
 | acceptLanguage| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="deleteBodyFatLog"/>
 ## FitbitAPI.deleteBodyFatLog
 This endpoint allow to delete a user's body fat log entry with the given ID.
 
@@ -811,7 +683,6 @@ This endpoint allow to delete a user's body fat log entry with the given ID.
 | bodyFatLogId| String| Required: The ID of the body fat log entry.
 
 
-<a name="getBodyTimeSeries"/>
 ## FitbitAPI.getBodyTimeSeries
 This endpoint return time series data in the specified range for a given resource in the format requested using units in the unit systems that corresponds to the Accept-Language header provided.
 
@@ -825,7 +696,6 @@ This endpoint return time series data in the specified range for a given resourc
 | acceptLanguage| String| Optional: The language to use for response values. Language is used to determine the activity measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="getBodyGoals"/>
 ## FitbitAPI.getBodyGoals
 This endpoint allow to retrieve a user's current body fat percentage or weight goal using units in the unit systems that corresponds to the Accept-Language header provided in the format requested.
 
@@ -837,7 +707,6 @@ This endpoint allow to retrieve a user's current body fat percentage or weight g
 | acceptLanguage| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="updateBodyFatGoal"/>
 ## FitbitAPI.updateBodyFatGoal
 This endpoint create or update user's fat percentage goal.
 
@@ -848,7 +717,6 @@ This endpoint create or update user's fat percentage goal.
 | fat        | String| Required: Target body fat percentage; in the format X.XX.
 
 
-<a name="updateWeightGoal"/>
 ## FitbitAPI.updateWeightGoal
 This endpoint create or update user's fat or weight goal using units in the unit systems that corresponds to the Accept-Language header provided in the format requested.
 
@@ -862,7 +730,6 @@ This endpoint create or update user's fat or weight goal using units in the unit
 | acceptLanguage| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="getWeightLogs"/>
 ## FitbitAPI.getWeightLogs
 This endpoint allow to retrieve a list of all user's body weight log entries for a given day using units in the unit systems which corresponds to the Accept-Language header provided. Body weight log entries are available only to authorized user. Body weight log entries in response are sorted exactly the same as they are presented on the Fitbit website.
 
@@ -875,7 +742,6 @@ This endpoint allow to retrieve a list of all user's body weight log entries for
 | acceptLanguage| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="logWeight"/>
 ## FitbitAPI.logWeight
 This endpoint create log entry for a body weight using units in the unit systems that corresponds to the Accept-Language header provided and get a response in the format requested. Note: The returned Weight Log IDs are unique to the user, but not globally unique.
 
@@ -889,7 +755,6 @@ This endpoint create log entry for a body weight using units in the unit systems
 | acceptLanguage| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="deleteWeightLog"/>
 ## FitbitAPI.deleteWeightLog
 This endpoint allow to delete a user's body weight log entry with the given ID.
 
@@ -900,7 +765,6 @@ This endpoint allow to delete a user's body weight log entry with the given ID.
 | bodyWeightLogId| String| Required: The ID of the body weight log entry.
 
 
-<a name="getDailyActivitySummary"/>
 ## FitbitAPI.getDailyActivitySummary
 This endpoint retrieves a summary and list of a user's activities and activity log entries for a given day in the format requested using units in the unit system which corresponds to the Accept-Language header provided.
 
@@ -913,7 +777,6 @@ This endpoint retrieves a summary and list of a user's activities and activity l
 | acceptLocale  | String| Optional: The locale to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="getActivityIntradayTimeSeries"/>
 ## FitbitAPI.getActivityIntradayTimeSeries
 This endpoint returns the Intraday Time Series for a given resource in the format requested. The endpoint mimics the Get Activity Time Series endpoint.
 
@@ -928,7 +791,6 @@ This endpoint returns the Intraday Time Series for a given resource in the forma
 | acceptLanguage| String| Optional: The language to use for response values. Language is used to determine the activity measurement units returned. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="browseActivityTypes"/>
 ## FitbitAPI.browseActivityTypes
 Get a tree of all valid Fitbit public activities from the activities catalog as well as private custom activities the user created in the format requested. If the activity has levels, also get a list of activity level details. Typically, an applications retrieve the complete list of activities once at startup to cache and show in the UI later.
 
@@ -936,7 +798,6 @@ Get a tree of all valid Fitbit public activities from the activities catalog as 
 |------------|-------|----------
 | accessToken| String| Required: The access token obtained from getAccessToken method.
 
-<a name="getActivityType"/>
 ## FitbitAPI.getActivityType
 Returns the details of a specific activity in the Fitbit activities database in the format requested. If activity has levels, also returns a list of activity level details.
 
@@ -947,7 +808,6 @@ Returns the details of a specific activity in the Fitbit activities database in 
 | acceptLocale| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="getFrequentActivities"/>
 ## FitbitAPI.getFrequentActivities
 This endpoint retrieves a list of a user's frequent activities in the format requested using units in the unit system which corresponds to the Accept-Language header provided. A frequent activity record contains the distance and duration values recorded the last time the activity was logged. The record retrieved can be used to log the activity via the Log Activity endpoint with the same or adjusted values for distance and duration.
 
@@ -957,7 +817,6 @@ This endpoint retrieves a list of a user's frequent activities in the format req
 | acceptLanguage| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
 | acceptLocale  | String| Optional: The locale to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
-<a name="getRecentActivityTypes"/>
 ## FitbitAPI.getRecentActivityTypes
 This endpoint retrieves a list of a user's recent activities types logged with some details of the last activity log of that type using units in the unit system which corresponds to the Accept-Language header provided. The record retrieved can be used to log the activity via the Log Activity endpoint with the same or adjusted values for distance and duration.
 
@@ -967,7 +826,6 @@ This endpoint retrieves a list of a user's recent activities types logged with s
 | acceptLanguage| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
 | acceptLocale  | String| Optional: The locale to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
-<a name="getFavoriteActivities"/>
 ## FitbitAPI.getFavoriteActivities
 This endpoint returns a list of a user's favorite activities.
 
@@ -976,7 +834,6 @@ This endpoint returns a list of a user's favorite activities.
 | accessToken| String| Required: The access token obtained from getAccessToken method.
 | userId     | String| Required: The encoded ID of the user. Use "-" (dash) for current logged-in user.
 
-<a name="addFavoriteActivity"/>
 ## FitbitAPI.addFavoriteActivity
 This endpoint add the activity with the given ID to user's list of favorite activities.
 
@@ -986,7 +843,6 @@ This endpoint add the activity with the given ID to user's list of favorite acti
 | activityId | String| Required: The ID of the activity to add to user's favorites.
 
 
-<a name="deleteFavoriteActivity"/>
 ## FitbitAPI.deleteFavoriteActivity
 This endpoint remove the activity with the given ID from a user's list of favorite activities.
 
@@ -996,7 +852,6 @@ This endpoint remove the activity with the given ID from a user's list of favori
 | activityId | String| Required: The ID of the activity to be removed.
 
 
-<a name="getActivityGoals"/>
 ## FitbitAPI.getActivityGoals
 This endpoint retrieve a user's current daily or weekly activity goals using measurement units as defined in the unit system, which corresponds to the Accept-Language header provided.
 
@@ -1007,7 +862,6 @@ This endpoint retrieve a user's current daily or weekly activity goals using mea
 | period     | String| Required: The period to be returned. Possible values: daily or weekly.
 
 
-<a name="updateActivityGoals"/>
 ## FitbitAPI.updateActivityGoals
 This endpoint create or update a user's daily activity goals and return a response using units in the unit system which corresponds to the Accept-Language header provided.
 
@@ -1024,7 +878,6 @@ This endpoint create or update a user's daily activity goals and return a respon
 | acceptLanguage| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="getLifetimeStats"/>
 ## FitbitAPI.getLifetimeStats
 This endpoint retrieves the user's activity statistics in the format requested using units in the unit system which corresponds to the Accept-Language header provided. Activity statistics includes Lifetime and Best achievement values from the My Achievements tile on the website dashboard. Response contains both statistics from the tracker device and total numbers including tracker data and manual activity log entries as seen on the Fitbit website dashboard.
 
@@ -1035,7 +888,6 @@ This endpoint retrieves the user's activity statistics in the format requested u
 | acceptLanguage| String| Optional: The measurement unit system to use for response values. Example: en_US. For more details see in specified section at the bottom.
 
 
-<a name="getActivityTimeSeries"/>
 ## FitbitAPI.getActivityTimeSeries
 This endpoint returns time series data in the specified range for a given resource in the format requested using units in the unit system that corresponds to the Accept-Language header provided.
 
@@ -1078,7 +930,6 @@ activities/tracker/minutesVeryActive
 activities/tracker/activityCalories
 ```
 
-<a name="addSubscription"/>
 ## FitbitAPI.addSubscription
 You must add a subscription in your application so that users will get notifications and return a response in the format requested. The subscriptionId value provides a way to associate an update with a particular user stream in your application.
 
@@ -1096,7 +947,6 @@ You must add a subscription in your application so that users will get notificat
 - <kbd>sleep</kbd> collection requires <kbd>sleep</kbd>
 - If no collection specified, <kbd>activity</kbd>, <kbd>nutrition</kbd>, <kbd>profile</kbd>, <kbd>settings</kbd>, <kbd>sleep</kbd>, <kbd>weight</kbd> scope required.
 
-<a name="getSubscriptions"/>
 ## FitbitAPI.getSubscriptions
 Get a list of a user's subscriptions for your application in the format requested. You can either fetch subscriptions for a specific collection or the entire list of subscriptions for the user.
 
@@ -1105,7 +955,6 @@ Get a list of a user's subscriptions for your application in the format requeste
 | accessToken   | String| Required: The access token obtained from getAccessToken method.
 | collectionPath| String| Optional: Collection to get subscriptions for (foods, activities, sleep, or body.) If not present, list will include all subscriptions for the user.
 
-<a name="removeSubscription"/>
 ## FitbitAPI.removeSubscription
 Deletes a subscription for a user.
 
@@ -1116,7 +965,6 @@ Deletes a subscription for a user.
 | collectionPath     | String| Optional: Collection to delete subscription form (foods, activities, sleep, or body.). If not present, subscriptions will be deleted from all collections.
 | xFitbitSubscriberId| String| Optional: The ID of the subscriber to receive notifications, as defined on dev.fitbit.com. If not present, the default subscriber is used. Recommended to fill.
 
-<a name="acceptLanguageOptions"/>
 ## acceptLanguage
 API calls reveal and log resource values in one of the unit systems based on the value of the Accept-Language header. If an endpoint respects the Accept-Language header, it is explicitly mentioned in the endpoint details.
 
@@ -1167,7 +1015,6 @@ Metric
 | liquids               | milliliters
 | blood glucose         | millimoles per liter (mmol/dl) (molar concentration)
 
-<a name="acceptLocale"/>
 ## acceptLocale
 Some of the API responses include text fields that may be suitable for displaying to the end user. Setting the Accept-Locale header will return a translated response if available. We currently support the following locales:
 
