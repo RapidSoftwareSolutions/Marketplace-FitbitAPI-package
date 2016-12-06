@@ -1,5 +1,5 @@
 # FitbitAPI Package
-Fitbit provides a Web API for accessing data from Fitbit activity trackers, Aria scale, and manually entered logs.
+Access data from Fitbit activity trackers.
 * Domain: fitbit.com
 * Credentials: clientId, clientSecret
 
