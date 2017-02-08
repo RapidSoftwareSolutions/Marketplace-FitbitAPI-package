@@ -1,3 +1,5 @@
+[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/FitbitAPI/functions?utm_source=RapidAPIGitHub_FitBitFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
+
 # FitbitAPI Package
 Access data from Fitbit activity trackers.
 * Domain: fitbit.com
