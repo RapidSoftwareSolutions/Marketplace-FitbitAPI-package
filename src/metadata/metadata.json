@@ -30,7 +30,7 @@
                 }, {
                     "name": "code",
                     "type": "String",
-                    "info": "The access grant code you received via the callback from ProductHunt.",
+                    "info": "The access grant code you received via the callback from Fitbit.",
                     "required": true
                 }, {
                     "name": "state",
