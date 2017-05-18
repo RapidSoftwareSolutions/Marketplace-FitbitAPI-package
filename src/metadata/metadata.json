@@ -98,7 +98,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }],
             "callbacks": [{
                     "name": "error",
@@ -114,7 +115,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -135,7 +137,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -266,7 +269,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -292,7 +296,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "acceptLanguage",
                     "type": "String",
@@ -313,7 +318,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "minDuration",
                     "type": "String",
@@ -334,7 +340,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -370,7 +377,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -396,7 +404,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -427,7 +436,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -468,7 +478,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -504,7 +515,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "startDate",
                     "type": "String",
@@ -545,7 +557,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -566,7 +579,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -592,7 +606,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -613,7 +628,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "invitedUserEmail",
                     "type": "String",
@@ -639,7 +655,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "fromUserId",
                     "type": "String",
@@ -665,7 +682,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }],
             "callbacks": [{
                     "name": "error",
@@ -681,7 +699,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -702,7 +721,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -733,7 +753,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -754,7 +775,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -795,7 +817,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -866,7 +889,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -917,7 +941,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -958,7 +983,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -1004,7 +1030,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -1030,7 +1057,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -1071,7 +1099,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -1097,7 +1126,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -1123,7 +1153,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -1149,7 +1180,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -1175,7 +1207,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -1201,7 +1234,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -1227,7 +1261,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -1268,7 +1303,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -1299,7 +1335,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -1345,7 +1382,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -1371,7 +1409,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -1427,7 +1466,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -1453,7 +1493,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "foodId",
                     "type": "String",
@@ -1479,7 +1520,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "acceptLanguage",
                     "type": "String",
@@ -1500,7 +1542,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "query",
                     "type": "String",
@@ -1526,7 +1569,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -1557,7 +1601,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -1583,7 +1628,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }],
             "callbacks": [{
                     "name": "error",
@@ -1599,7 +1645,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -1635,7 +1682,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -1676,7 +1724,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -1702,7 +1751,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -1743,7 +1793,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -1774,7 +1825,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -1800,7 +1852,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -1841,7 +1894,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -1877,7 +1931,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -1918,7 +1973,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -1944,7 +2000,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -1980,7 +2037,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "resourcePath",
                     "type": "String",
@@ -2026,7 +2084,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }],
             "callbacks": [{
                     "name": "error",
@@ -2042,7 +2101,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "activityId",
                     "type": "String",
@@ -2068,7 +2128,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "acceptLanguage",
                     "type": "String",
@@ -2094,7 +2155,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "acceptLanguage",
                     "type": "String",
@@ -2120,7 +2182,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -2141,7 +2204,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "activityId",
                     "type": "String",
@@ -2162,7 +2226,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "activityId",
                     "type": "String",
@@ -2183,7 +2248,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -2209,7 +2275,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -2265,7 +2332,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -2291,7 +2359,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "userId",
                     "type": "String",
@@ -2332,7 +2401,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "collectionPath",
                     "type": "String",
@@ -2363,7 +2433,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "collectionPath",
                     "type": "String",
@@ -2384,7 +2455,8 @@
                     "name": "accessToken",
                     "type": "String",
                     "info": "The access token obtained from getAccessToken method.",
-                    "required": true
+                    "required": true,
+                    "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "subscriptionId",
                     "type": "String",
