@@ -43,8 +43,11 @@ $app->post('/api/FitbitAPI/getFoodLogs', function ($request, $response, $args) {
         $result['contextWrites']['to']['fields'] = $error;
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);
     }
+
+    $date = new DateTime($post_data['args']['date']);
+    $dateTime = $date->format('Y-m-d');
     
-    $query_str = 'https://api.fitbit.com/1/user/'.$post_data['args']['userId'].'/foods/log/date/'.$post_data['args']['date'].'.json';
+    $query_str = 'https://api.fitbit.com/1/user/'.$post_data['args']['userId'].'/foods/log/date/'.$dateTime.'.json';
     
     $headers['Authorization'] = 'Bearer '.$post_data['args']['accessToken'];
     if(isset($post_data['args']['acceptLanguage']) && !empty($post_data['args']['acceptLanguage'])) {

@@ -49,8 +49,15 @@ $app->post('/api/FitbitAPI/getSleepTimeSeries', function ($request, $response, $
         $result['contextWrites']['to']['fields'] = $error;
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);
     }
-    
-    $query_str = 'https://api.fitbit.com/1/user/'.$post_data['args']['userId'].'/'.$post_data['args']['resourcePath'].'/date/'.$post_data['args']['startDate'].'/'.$post_data['args']['endDate'].'.json';
+
+    $date = new DateTime($post_data['args']['startDate']);
+    $startDate = $date->format('Y-m-d');
+
+    $date = new DateTime($post_data['args']['endDate']);
+    $endDate = $date->format('Y-m-d');
+
+
+    $query_str = 'https://api.fitbit.com/1/user/'.$post_data['args']['userId'].'/'.$post_data['args']['resourcePath'].'/date/'.$startDate.'/'.$endDate.'.json';
     
     $headers['Authorization'] = 'Bearer '.$post_data['args']['accessToken'];
     if(isset($post_data['args']['acceptLanguage']) && !empty($post_data['args']['acceptLanguage'])) {

@@ -55,7 +55,10 @@ $app->post('/api/FitbitAPI/logWater', function ($request, $response, $args) {
     }
     
     $body['amount'] = $post_data['args']['amount'];
-    $body['date'] = $post_data['args']['date'];
+
+    $date = new DateTime($post_data['args']['date']);
+    $body['date'] = $date->format('Y-m-d');
+
     if(!empty($post_data['args']['unit'])) {
         $body['unit'] = $post_data['args']['unit'];
     }

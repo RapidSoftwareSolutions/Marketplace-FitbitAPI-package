@@ -151,7 +151,7 @@
                     "required": false
                 }, {
                     "name": "birthday",
-                    "type": "String",
+                    "type": "DatePicker",
                     "info": "Date of birth; in the format yyyy-MM-dd.",
                     "required": false
                 }, {
@@ -225,8 +225,9 @@
                     "info": "Food Database Locale; in the format \"xx_XX\".",
                     "required": false
                 }, {
-                    "name": "locale",
-                    "type": "String",
+                    "name":"locale",
+                    "type": "Select",
+                    "options": ["en_US","fr_FR","de_DE","es_ES","en_GB","en_AU","en_NZ","ja_JP"],
                     "info": "Locale of website (country\/language); one of the locales, currently \u2013 (en_US, fr_FR, de_DE, es_ES, en_GB, en_AU, en_NZ, ja_JP).",
                     "required": false
                 }, {
@@ -251,8 +252,9 @@
                     "required": false
                 }, {
                     "name": "acceptLanguage",
-                    "type": "String",
-                    "info": "The measurement unit system to use for response values. Example: en_US. For more details see README.",
+                    "type": "Select",
+                    "options": ["en_AU","fr_FR","de_DE","ja_JP","en_NZ","es_ES","en_GB","en_US"],
+                    "info": "Used to determine the food measurement units returned. Example: en_US. For more details see README.",
                     "required": false
                 }],
             "callbacks": [{
@@ -278,7 +280,8 @@
                     "required": true
                 }, {
                     "name": "acceptLanguage",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["en_US","fr_FR","de_DE","es_ES","en_GB","en_AU","en_NZ","ja_JP"],
                     "info": "The measurement unit system to use for response values. Example: en_US. For more details see README.",
                     "required": false
                 }],
@@ -359,7 +362,7 @@
                     "required": true
                 }, {
                     "name": "date",
-                    "type": "String",
+                    "type": "DatePicker",
                     "info": "Log entry date in the format yyyy-MM-dd.",
                     "required": true
                 }],
@@ -413,7 +416,7 @@
                     "required": true
                 }, {
                     "name": "date",
-                    "type": "String",
+                    "type": "DatePicker",
                     "info": "The date of records to be returned. In the format yyyy-MM-dd.",
                     "required": true
                 }, {
@@ -445,17 +448,18 @@
                     "required": true
                 }, {
                     "name": "resourcePath",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["sleep/startTime","sleep/timeInBed","sleep/minutesAsleep","sleep/awakeningsCount","sleep/minutesAwake","sleep/minutesToFallAsleep","sleep/minutesAfterWakeup","sleep/efficiency"],
                     "info": "The resource path; see the Resource Path Options in README for a list of options.",
                     "required": true
                 }, {
                     "name": "startDate",
-                    "type": "String",
+                    "type": "DatePicker",
                     "info": "The range start date, in the format yyyy-MM-dd or today.",
                     "required": true
                 }, {
                     "name": "endDate",
-                    "type": "String",
+                    "type": "DatePicker",
                     "info": "The end date of the range, in the format yyyy-MM-dd or today. Also supported values: 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y, or max. Remember that with short code endpoint will return data earlier startDate. See README for more details and examples.",
                     "required": true
                 }, {
@@ -487,12 +491,12 @@
                     "required": true
                 }, {
                     "name": "startDate",
-                    "type": "String",
+                    "type": "DatePicker",
                     "info": "The range start date, in the format yyyy-MM-dd or today.",
                     "required": true
                 }, {
                     "name": "endDate",
-                    "type": "String",
+                    "type": "DatePicker",
                     "info": "The end date of the range, in the format yyyy-MM-dd or today. Also supported values: 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y, or max. Remember that with short code endpoint will return data earlier startDate. See README for more details and examples.",
                     "required": true
                 }, {
@@ -509,7 +513,7 @@
                     "info": "Success"
                 }]
         }, {
-            "name": "getHeartRateIntradayTimeSeries",
+                "name": "getHeartRateIntradayTimeSeries",
             "description": "This endpoint returns the intraday time series for a given resource in the format requested. If your application has the appropriate access, your calls to a time series endpoint for a specific day (by using start and end dates on the same day or a period of 1d), the response will include extended intraday values with a one-minute detail level for that day.",
             "args": [{
                     "name": "accessToken",
@@ -519,12 +523,12 @@
                     "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "startDate",
-                    "type": "String",
+                    "type": "DatePicker",
                     "info": "The range start date, in the format yyyy-MM-dd or today.",
                     "required": true
                 }, {
                     "name": "endDate",
-                    "type": "String",
+                    "type": "DatePicker",
                     "info": "The end date of the range, in the format yyyy-MM-dd or today. Also supported values: 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y, or max. Remember that with short code endpoint will return data earlier startDate.",
                     "required": true
                 }, {
@@ -730,7 +734,7 @@
                     "required": true
                 }, {
                     "name": "date",
-                    "type": "String",
+                    "type": "DatePicker",
                     "info": "The date of records to be returned. In the format yyyy-MM-dd.",
                     "required": true
                 }, {
@@ -789,12 +793,12 @@
                     "required": true
                 }, {
                     "name": "startDate",
-                    "type": "String",
+                    "type": "DatePicker",
                     "info": "The range start date, in the format yyyy-MM-dd or today",
                     "required": true
                 }, {
                     "name": "endDate",
-                    "type": "String",
+                    "type": "DatePicker",
                     "info": "The end date of the range, in the format yyyy-MM-dd or today. Also supported values: 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y. See examples in a README.",
                     "required": true
                 }, {
@@ -851,7 +855,7 @@
                     "required": true
                 }, {
                     "name": "date",
-                    "type": "String",
+                    "type": "DatePicker",
                     "info": "Log entry date; in the format yyyy-MM-dd.",
                     "required": true
                 }, {
@@ -950,7 +954,7 @@
                     "required": true
                 }, {
                     "name": "date",
-                    "type": "String",
+                    "type": "DatePicker",
                     "info": "Log entry date; in the format yyyy-MM-dd.",
                     "required": true
                 }, {
@@ -960,7 +964,8 @@
                     "required": true
                 }, {
                     "name": "unit",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["ml","fl oz","cup"],
                     "info": "Water measurement unit. \"ml\", \"fl oz\", or \"cup\".",
                     "required": false
                 }, {
@@ -997,7 +1002,8 @@
                     "required": false
                 }, {
                     "name": "intensity",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["MAINTENANCE","EASIER","MEDIUM","KINDAHARD","HARDER"],
                     "info": "Food plan intensity (MAINTENANCE, EASIER, MEDIUM, KINDAHARD, or HARDER). Either calories or intensity must be provided.",
                     "required": false
                 }, {
@@ -1135,7 +1141,8 @@
                     "required": true
                 }, {
                     "name": "acceptLanguage",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["en_AU","fr_FR","de_DE","ja_JP","en_NZ","es_ES","en_GB","en_US"],
                     "info": "Used to determine the food measurement units returned. Example: en_US. For more details see README.",
                     "required": false
                 }],
@@ -1162,7 +1169,8 @@
                     "required": true
                 }, {
                     "name": "acceptLanguage",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["en_AU","fr_FR","de_DE","ja_JP","en_NZ","es_ES","en_GB","en_US"],
                     "info": "Used to determine the food measurement units returned. Example: en_US. For more details see README.",
                     "required": false
                 }],
@@ -1243,7 +1251,8 @@
                     "required": true
                 }, {
                     "name": "acceptLanguage",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["en_AU","fr_FR","de_DE","ja_JP","en_NZ","es_ES","en_GB","en_US"],
                     "info": "Used to determine the food measurement units returned. Example: en_US. For more details see README.",
                     "required": false
                 }],
@@ -1285,7 +1294,8 @@
                     "required": true
                 }, {
                     "name": "acceptLanguage",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["en_AU","fr_FR","de_DE","ja_JP","en_NZ","es_ES","en_GB","en_US"],
                     "info": "Used to determine the food measurement units returned. Example: en_US. For more details see README.",
                     "required": false
                 }],
@@ -1317,7 +1327,8 @@
                     "required": true
                 }, {
                     "name": "acceptLanguage",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["en_AU","fr_FR","de_DE","ja_JP","en_NZ","es_ES","en_GB","en_US"],
                     "info": "Used to determine the food measurement units returned. Example: en_US. For more details see README.",
                     "required": false
                 }],
@@ -1364,7 +1375,8 @@
                     "required": true
                 }, {
                     "name": "acceptLanguage",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["en_AU","fr_FR","de_DE","ja_JP","en_NZ","es_ES","en_GB","en_US"],
                     "info": "Used to determine the food measurement units returned. Example: en_US. For more details see README.",
                     "required": false
                 }],
@@ -1448,7 +1460,8 @@
                     "required": false
                 }, {
                     "name": "acceptLanguage",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["en_AU","fr_FR","de_DE","ja_JP","en_NZ","es_ES","en_GB","en_US"],
                     "info": "Used to determine the food measurement units returned. Example: en_US. For more details see README.",
                     "required": false
                 }],
@@ -1502,7 +1515,8 @@
                     "required": true
                 }, {
                     "name": "acceptLanguage",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["en_AU","fr_FR","de_DE","ja_JP","en_NZ","es_ES","en_GB","en_US"],
                     "info": "Used to determine the food measurement units returned. Example: en_US. For more details see README.",
                     "required": false
                 }],
@@ -1524,7 +1538,8 @@
                     "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "acceptLanguage",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["en_AU","fr_FR","de_DE","ja_JP","en_NZ","es_ES","en_GB","en_US"],
                     "info": "Used to determine the food measurement units returned. Example: en_US. For more details see README.",
                     "required": false
                 }],
@@ -1551,7 +1566,8 @@
                     "required": true
                 }, {
                     "name": "acceptLanguage",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["en_AU","fr_FR","de_DE","ja_JP","en_NZ","es_ES","en_GB","en_US"],
                     "info": "Used to determine the food measurement units returned. Example: en_US. For more details see README.",
                     "required": false
                 }],
@@ -1578,12 +1594,13 @@
                     "required": true
                 }, {
                     "name": "date",
-                    "type": "String",
+                    "type": "DatePicker",
                     "info": "The date of records to be returned. In the format yyyy-MM-dd.",
                     "required": true
                 }, {
                     "name": "acceptLanguage",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["en_AU","fr_FR","de_DE","ja_JP","en_NZ","es_ES","en_GB","en_US"],
                     "info": "Used to determine the food measurement units returned. Example: en_US. For more details see README.",
                     "required": false
                 }],
@@ -1664,8 +1681,9 @@
                     "required": false
                 }, {
                     "name": "acceptLanguage",
-                    "type": "String",
-                    "info": "The measurement unit system to use for response values. Example: en_US. For more details see README.",
+                    "type": "Select",
+                    "options": ["en_AU","fr_FR","de_DE","ja_JP","en_NZ","es_ES","en_GB","en_US"],
+                    "info": "Used to determine the food measurement units returned. Example: en_US. For more details see README.",
                     "required": false
                 }],
             "callbacks": [{
@@ -1706,8 +1724,9 @@
                     "required": false
                 }, {
                     "name": "acceptLanguage",
-                    "type": "String",
-                    "info": "The measurement unit system to use for response values. Example: en_US. For more details see README.",
+                    "type": "Select",
+                    "options": ["en_AU","fr_FR","de_DE","ja_JP","en_NZ","es_ES","en_GB","en_US"],
+                    "info": "Used to determine the food measurement units returned. Example: en_US. For more details see README.",
                     "required": false
                 }],
             "callbacks": [{
@@ -1807,8 +1826,9 @@
                     "required": true
                 }, {
                     "name": "acceptLanguage",
-                    "type": "String",
-                    "info": "The measurement unit system to use for response values. Example: en_US. For more details see README.",
+                    "type": "Select",
+                    "options": ["en_AU","fr_FR","de_DE","ja_JP","en_NZ","es_ES","en_GB","en_US"],
+                    "info": "Used to determine the food measurement units returned. Example: en_US. For more details see README.",
                     "required": false
                 }],
             "callbacks": [{
@@ -1876,8 +1896,9 @@
                     "required": false
                 }, {
                     "name": "acceptLanguage",
-                    "type": "String",
-                    "info": "The measurement unit system to use for response values. Example: en_US. For more details see README.",
+                    "type": "Select",
+                    "options": ["en_AU","fr_FR","de_DE","ja_JP","en_NZ","es_ES","en_GB","en_US"],
+                    "info": "Used to determine the food measurement units returned. Example: en_US. For more details see README.",
                     "required": false
                 }],
             "callbacks": [{
@@ -1913,8 +1934,9 @@
                     "required": true
                 }, {
                     "name": "acceptLanguage",
-                    "type": "String",
-                    "info": "The measurement unit system to use for response values. Example: en_US. For more details see README.",
+                    "type": "Select",
+                    "options": ["en_AU","fr_FR","de_DE","ja_JP","en_NZ","es_ES","en_GB","en_US"],
+                    "info": "Used to determine the food measurement units returned. Example: en_US. For more details see README.",
                     "required": false
                 }],
             "callbacks": [{
@@ -1955,8 +1977,9 @@
                     "required": false
                 }, {
                     "name": "acceptLanguage",
-                    "type": "String",
-                    "info": "The measurement unit system to use for response values. Example: en_US. For more details see README.",
+                    "type": "Select",
+                    "options": ["en_AU","fr_FR","de_DE","ja_JP","en_NZ","es_ES","en_GB","en_US"],
+                    "info": "Used to determine the food measurement units returned. Example: en_US. For more details see README.",
                     "required": false
                 }],
             "callbacks": [{
@@ -2014,8 +2037,9 @@
                     "required": true
                 }, {
                     "name": "acceptLanguage",
-                    "type": "String",
-                    "info": "The measurement unit system to use for response values. Example: en_US. For more details see README.",
+                    "type": "Select",
+                    "options": ["en_AU","fr_FR","de_DE","ja_JP","en_NZ","es_ES","en_GB","en_US"],
+                    "info": "Used to determine the food measurement units returned. Example: en_US. For more details see README.",
                     "required": false
                 }, {
                     "name": "acceptLocale",
@@ -2132,8 +2156,9 @@
                     "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "acceptLanguage",
-                    "type": "String",
-                    "info": "The measurement unit system to use for response values. Example: en_US. For more details see README.",
+                    "type": "Select",
+                    "options": ["en_AU","fr_FR","de_DE","ja_JP","en_NZ","es_ES","en_GB","en_US"],
+                    "info": "Used to determine the food measurement units returned. Example: en_US. For more details see README.",
                     "required": false
                 }, {
                     "name": "acceptLocale",
@@ -2159,8 +2184,9 @@
                     "generator": "https://rapidoauth.com/fitbit"
                 }, {
                     "name": "acceptLanguage",
-                    "type": "String",
-                    "info": "The measurement unit system to use for response values. Example: en_US. For more details see README.",
+                    "type": "Select",
+                    "options": ["en_AU","fr_FR","de_DE","ja_JP","en_NZ","es_ES","en_GB","en_US"],
+                    "info": "Used to determine the food measurement units returned. Example: en_US. For more details see README.",
                     "required": false
                 }, {
                     "name": "acceptLocale",
@@ -2314,8 +2340,9 @@
                     "required": false
                 }, {
                     "name": "acceptLanguage",
-                    "type": "String",
-                    "info": "The measurement unit system to use for response values. Example: en_US. For more details see README.",
+                    "type": "Select",
+                    "options": ["en_AU","fr_FR","de_DE","ja_JP","en_NZ","es_ES","en_GB","en_US"],
+                    "info": "Used to determine the food measurement units returned. Example: en_US. For more details see README.",
                     "required": false
                 }],
             "callbacks": [{
@@ -2341,8 +2368,9 @@
                     "required": true
                 }, {
                     "name": "acceptLanguage",
-                    "type": "String",
-                    "info": "The measurement unit system to use for response values. Example: en_US. For more details see README.",
+                    "type": "Select",
+                    "options": ["en_AU","fr_FR","de_DE","ja_JP","en_NZ","es_ES","en_GB","en_US"],
+                    "info": "Used to determine the food measurement units returned. Example: en_US. For more details see README.",
                     "required": false
                 }],
             "callbacks": [{
@@ -2373,18 +2401,19 @@
                     "required": true
                 }, {
                     "name": "startDate",
-                    "type": "String",
+                    "type": "DatePicker",
                     "info": "The range start date, in the format yyyy-MM-dd or today.",
                     "required": true
                 }, {
                     "name": "endDate",
-                    "type": "String",
+                    "type": "DatePicker",
                     "info": "The range end date, in the format yyyy-MM-dd or today. Also possible values for period: 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y. If uses period values, startDate will be end date for period.",
                     "required": true
                 }, {
                     "name": "acceptLanguage",
-                    "type": "String",
-                    "info": "The measurement unit system to use for response values. Example: en_US. For more details see README.",
+                    "type": "Select",
+                    "options": ["en_AU","fr_FR","de_DE","ja_JP","en_NZ","es_ES","en_GB","en_US"],
+                    "info": "Used to determine the food measurement units returned. Example: en_US. For more details see README.",
                     "required": false
                 }],
             "callbacks": [{

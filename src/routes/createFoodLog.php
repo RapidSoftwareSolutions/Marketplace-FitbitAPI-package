@@ -69,7 +69,10 @@ $app->post('/api/FitbitAPI/createFoodLog', function ($request, $response, $args)
     $body['mealTypeId'] = $post_data['args']['mealTypeId'];
     $body['unitId'] = $post_data['args']['unitId'];
     $body['amount'] = $post_data['args']['amount'];
-    $body['date'] = $post_data['args']['date'];
+
+    $date = new DateTime($post_data['args']['date']);
+    $body['date'] = $date->format('Y-m-d');
+
     if(!empty($post_data['args']['foodId'])) {
         $body['foodId'] = $post_data['args']['foodId'];
     }

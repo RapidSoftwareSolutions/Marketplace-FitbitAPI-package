@@ -43,8 +43,10 @@ $app->post('/api/FitbitAPI/getSleepLogs', function ($request, $response, $args) 
         $result['contextWrites']['to']['fields'] = $error;
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);
     }
-    
-    $query_str = 'https://api.fitbit.com/1/user/'.$post_data['args']['userId'].'/sleep/date/'.$post_data['args']['date'].'.json';
+    $date = new DateTime($post_data['args']['date']);
+    $dateTime = $date->format('Y-m-d');
+
+    $query_str = 'https://api.fitbit.com/1/user/'.$post_data['args']['userId'].'/sleep/date/'.$dateTime.'.json';
     
     $headers['Authorization'] = 'Bearer '.$post_data['args']['accessToken'];
     

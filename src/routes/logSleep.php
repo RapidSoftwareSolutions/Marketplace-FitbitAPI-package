@@ -40,6 +40,7 @@ $app->post('/api/FitbitAPI/logSleep', function ($request, $response, $args) {
     }
     if(empty($post_data['args']['date'])) {
         $error[] = 'date';
+
     }
     
     if(!empty($error)) {
@@ -56,7 +57,8 @@ $app->post('/api/FitbitAPI/logSleep', function ($request, $response, $args) {
     
     $body['startTime'] = $post_data['args']['startTime'];
     $body['duration'] = $post_data['args']['duration'];
-    $body['date'] = $post_data['args']['date'];
+    $date = new DateTime($post_data['args']['date']);
+    $body['date'] = $date->format('Y-m-d');
     
     $client = $this->httpClient;
     

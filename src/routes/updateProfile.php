@@ -55,7 +55,8 @@ $app->post('/api/FitbitAPI/updateProfile', function ($request, $response, $args)
         $body['gender'] = $post_data['args']['gender'];
     }
     if(!empty($post_data['args']['birthday'])) {
-        $body['birthday'] = $post_data['args']['birthday'];
+        $date = new DateTime($post_data['args']['birthday']);
+        $body['birthday'] = $date->format('Y-m-d');
     }
     if(!empty($post_data['args']['height'])) {
         $body['height'] = $post_data['args']['height'];
