@@ -159,7 +159,7 @@ This endpoint returns time series data in the specified range for a given resour
 |---------------|-------|----------
 | accessToken   | String| Required: The access token obtained from getAccessToken method.
 | userId        | String| Required: The encoded ID of the user. Use "-" (dash) for current logged-in user.
-| resourcePath  | String| Required: The resource path; see the Resource Path Options in README for a list of options.
+| resourcePath  | Select| Required: The resource path; see the Resource Path Options in README for a list of options.
 | startDate     | DatePicker| Required: The range start date, in the format yyyy-MM-dd or today.
 | endDate       | DatePicker| Required: The end date of the range, in the format yyyy-MM-dd or today. Also supported values: 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y, or max. Remember that with short code endpoint will return data earlier startDate. See README for more details and examples.
 | acceptLanguage| Select| Optional: The language to use for response values. Language is used to determine the food measurement units returned. Example: en_US. For more details see in specified section at the bottom.
