@@ -348,7 +348,7 @@ This endpoint endpoint creates a log entry for a food event and returns a respon
 | userId        | String| Required: The ID of the user. Use "-" (dash) for current logged-in user.
 | foodId        | String| Optional: ID of the food to be logged. Either foodId or foodName must be provided.
 | foodName      | String| Optional: Food entry name. Either foodId or foodName must be provided.
-| mealTypeId    | String| Required: Meal type. 1=Breakfast; 2=Morning Snack; 3=Lunch; 4=Afternoon Snack; 5=Dinner; 7=Anytime.
+| mealTypeId    | Select| Required: Meal type. 1=Breakfast; 2=Morning Snack; 3=Lunch; 4=Afternoon Snack; 5=Dinner; 7=Anytime.
 | unitId        | String| Required: ID of units used. Typically retrieved via a previous call to Get Food Logs, Search Foods, or Get Food Units.
 | amount        | String| Required: Amount consumed; in the format X.XX, in the specified unitId.
 | date          | DatePicker| Required: Log entry date; in the format yyyy-MM-dd.
@@ -871,7 +871,7 @@ This endpoint retrieve a user's current daily or weekly activity goals using mea
 |------------|-------|----------
 | accessToken| String| Required: The access token obtained from getAccessToken method.
 | userId     | String| Required: The encoded ID of the user. Use "-" (dash) for current logged-in user.
-| period     | String| Required: The period to be returned. Possible values: daily or weekly.
+| period     | Select| Required: The period to be returned. Possible values: daily or weekly.
 
 
 ## FitbitAPI.updateActivityGoals
