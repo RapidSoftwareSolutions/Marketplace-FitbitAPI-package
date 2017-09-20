@@ -9,6 +9,12 @@
         "domain": "fitbit.com",
         "credentials": ["clientId", "clientSecret"]
     },
+    "steps": [
+        "Go to Fitbit website",
+        "Log in or create a new account",
+        "Register an app",
+        "After creation your app you will see Client ID and Client Secret"
+    ],
     "blocks": [{
             "name": "getAccessToken",
             "description": "This endpoint allows to get a token on behalf of a user.",
